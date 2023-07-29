@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace ASPNetCoreIdentity.Data
+namespace Blog.Data
 {
     public class ApplicationDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {

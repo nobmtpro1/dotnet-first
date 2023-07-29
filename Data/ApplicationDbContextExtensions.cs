@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using Const = Blog.Constants;
 
-namespace ASPNetCoreIdentity.Data
+namespace Blog.Data
 {
     public static class ApplicationDbContextExtensions
     {

@@ -7,21 +7,29 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Blog.Areas.Admin.ViewModels.Article;
+using Blog.Services.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace Blog.Areas.Admin.Controllers;
 
-[Authorize(Roles=Constants.ROLE_ADMIN)]
+[Authorize(Roles = Constants.ROLE_ADMIN)]
 public class ArticleController : Controller
 {
     private readonly ILogger<ArticleController> _logger;
+    private IArticleService _articleService;
 
-    public ArticleController(ILogger<ArticleController> logger)
+    public ArticleController(ILogger<ArticleController> logger, IArticleService articleService)
     {
         _logger = logger;
+        _articleService = articleService;
     }
 
     public IActionResult Index()
     {
-        return View();
+        ArticleListViewModel model = new ArticleListViewModel();
+        var articles = _articleService.GetAll();
+        model.Articles = articles;
+        return View(model);
     }
 }

@@ -1,9 +1,14 @@
-using ASPNetCoreIdentity.Data;
+using Blog.Data;
 using Microsoft.EntityFrameworkCore;
 using Blog.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
+using Blog.Services.DI;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +50,8 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 });
 
+builder.Services.AddServiceCollection();
+
 try
 {
     var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
@@ -84,14 +91,12 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
-);
-app.MapAreaControllerRoute(
-    name: "admin",
-    areaName: "admin",
-    pattern: "{area}/{controller=Article}/{action=Index}/{id?}"
-);
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(name: "areas", pattern: "{area}/{controller=Article}/{action=Index}/{id?}");
+    endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
 
 app.Run();

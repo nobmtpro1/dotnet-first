@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Text.Encodings.Web;
 using Blog.ViewModels.Account;
+using Microsoft.Extensions.Logging;
 
 namespace Blog.Controllers;
 

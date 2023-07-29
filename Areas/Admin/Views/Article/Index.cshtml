@@ -1,1 +1,45 @@
-abc
+@model Blog.Areas.Admin.ViewModels.Article.ArticleListViewModel
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped" id="table1">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Title</th>
+          <th>Content</th>
+          <th>Created at</th>
+          <th>Updated at</th>
+        </tr>
+      </thead>
+      <tbody>
+   
+        @if (@Model.Articles != null)
+        {
+          var i = 0;
+          foreach (var article in Model.Articles)
+            {
+              ++i;
+              <tr>
+                <td>@i</td>
+                <td>@article.Title</td>
+                <td>@article.Content</td>
+                <td>@article.CreatedAt</td>
+                <td>
+                  @article.UpdatedAt
+                </td>
+              </tr>
+            }
+        }
+
+
+      </tbody>
+    </table>
+  </div>
+</div>
+@section Scripts {
+    <script>
+        // Simple Datatable
+        let table1 = document.querySelector('#table1');
+        let dataTable = new simpleDatatables.DataTable(table1);
+    </script>
+}
