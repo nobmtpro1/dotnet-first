@@ -14,7 +14,7 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class="sidebar-item active ">
+                        <li class='sidebar-item @Html.IsActive("Article","Index")'>
                             <a asp-area="Admin" asp-controller="Article" asp-action="Index" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Article</span>
@@ -34,6 +34,13 @@
                                     <a href="component-badge.html">Badge</a>
                                 </li>
                             </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a asp-area="" asp-controller="Account" asp-action="Logout" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Logout</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
