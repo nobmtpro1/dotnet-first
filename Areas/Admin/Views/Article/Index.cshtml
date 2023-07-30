@@ -1,6 +1,11 @@
 @model Blog.Areas.Admin.ViewModels.Article.ArticleListViewModel
 <div class="card">
   <div class="card-body">
+    <div class="row mb-3">
+      <div class="col">
+          <a asp-action="Add" class="btn btn-primary">ADD</a>
+      </div>
+    </div>
     <table class="table table-striped" id="table1">
       <thead>
         <tr>
@@ -22,7 +27,7 @@
               <tr>
                 <td>@i</td>
                 <td>@article.Title</td>
-                <td>@article.Content</td>
+                <td>@Html.Raw(article.Content)</td>
                 <td>@article.CreatedAt</td>
                 <td>
                   @article.UpdatedAt

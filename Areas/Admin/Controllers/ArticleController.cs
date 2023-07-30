@@ -32,4 +32,18 @@ public class ArticleController : Controller
         model.Articles = articles;
         return View(model);
     }
+
+    [HttpGet]
+    public IActionResult Add()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Add(ArticleViewModel model)
+    {
+        var article = _articleService.Insert(model);
+        TempData["Message"] = "Create successfully";
+        return RedirectToAction("Add");
+    }
 }

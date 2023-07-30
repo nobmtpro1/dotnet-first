@@ -7,6 +7,7 @@ using System.Text;
 using Blog.Services.Interfaces;
 using Blog.Areas.Admin.ViewModels.Article;
 using Microsoft.Extensions.Logging;
+using Blog.Models;
 
 namespace Blog.Services.Implementation
 {
@@ -35,6 +36,19 @@ namespace Blog.Services.Implementation
             }).ToList();
 
             return data;
+        }
+
+        public ArticleModel Insert(ArticleViewModel model)
+        {
+            var article = new ArticleModel()
+            {
+                // Id = Guid.NewGuid(),
+                Title = model.Title,
+                Content = model.Content
+            };
+            _unitOfWork.ArticleRepository.Insert(article);
+            _unitOfWork.SaveChanges();
+            return article;
         }
 
         // public List<ProductCategoryViewModel> GetProductCategorys()

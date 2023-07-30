@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Blog.Data.Repositories
 {
-    public class ArticleRepository : Repository<ArticleModel, int>, IArticleRepository
+    public class ArticleRepository : Repository<ArticleModel, Guid>, IArticleRepository
     {
         public ArticleRepository(ApplicationDbContext context) : base(context)
         {

@@ -5,7 +5,7 @@ using Blog.Models;
 
 namespace Blog.Services.Interfaces
 {
-    public interface IArticleRepository : IRepository<ArticleModel, int>
+    public interface IArticleRepository : IRepository<ArticleModel, Guid>
     {
     }
 }

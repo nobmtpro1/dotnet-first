@@ -7173,6 +7173,786 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\CHANGELOG.md",
+      "PackagePath": "staticwebassets\\tinymce\\CHANGELOG.md"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\README.md",
+      "PackagePath": "staticwebassets\\tinymce\\README.md"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\bower.json",
+      "PackagePath": "staticwebassets\\tinymce\\bower.json"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\composer.json",
+      "PackagePath": "staticwebassets\\tinymce\\composer.json"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\icons\\default\\icons.js",
+      "PackagePath": "staticwebassets\\tinymce\\icons\\default\\icons.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\icons\\default\\icons.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\icons\\default\\icons.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\icons\\default\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\icons\\default\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\license.txt",
+      "PackagePath": "staticwebassets\\tinymce\\license.txt"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\models\\dom\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\models\\dom\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\models\\dom\\model.js",
+      "PackagePath": "staticwebassets\\tinymce\\models\\dom\\model.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\models\\dom\\model.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\models\\dom\\model.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\package.json",
+      "PackagePath": "staticwebassets\\tinymce\\package.json"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\accordion\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\accordion\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\accordion\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\accordion\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\accordion\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\accordion\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\advlist\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\advlist\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\advlist\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\advlist\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\advlist\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\advlist\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\anchor\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\anchor\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\anchor\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\anchor\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\anchor\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\anchor\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\autolink\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\autolink\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\autolink\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\autolink\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\autolink\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\autolink\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\autoresize\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\autoresize\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\autoresize\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\autoresize\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\autoresize\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\autoresize\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\autosave\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\autosave\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\autosave\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\autosave\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\autosave\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\autosave\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\charmap\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\charmap\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\charmap\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\charmap\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\charmap\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\charmap\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\code\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\code\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\code\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\code\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\code\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\code\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\codesample\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\codesample\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\codesample\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\codesample\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\codesample\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\codesample\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\directionality\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\directionality\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\directionality\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\directionality\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\directionality\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\directionality\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\emoticons\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\emoticons\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\emoticons\\js\\emojiimages.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\emoticons\\js\\emojiimages.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\emoticons\\js\\emojiimages.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\emoticons\\js\\emojiimages.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\emoticons\\js\\emojis.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\emoticons\\js\\emojis.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\emoticons\\js\\emojis.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\emoticons\\js\\emojis.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\emoticons\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\emoticons\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\emoticons\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\emoticons\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\fullscreen\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\fullscreen\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\fullscreen\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\fullscreen\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\fullscreen\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\fullscreen\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ar.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ar.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\bg_BG.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\bg_BG.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ca.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ca.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\cs.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\cs.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\da.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\da.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\de.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\de.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\el.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\el.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\en.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\en.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\es.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\es.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\eu.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\eu.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fa.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fa.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fi.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fi.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fr_FR.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fr_FR.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\he_IL.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\he_IL.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hi.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hi.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hr.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hr.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hu_HU.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hu_HU.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\id.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\id.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\it.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\it.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ja.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ja.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\kk.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\kk.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ko_KR.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ko_KR.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ms.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ms.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\nb_NO.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\nb_NO.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\nl.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\nl.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pl.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pl.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pt_BR.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pt_BR.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pt_PT.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pt_PT.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ro.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ro.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ru.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ru.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sk.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sk.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sl_SI.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sl_SI.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sv_SE.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sv_SE.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\th_TH.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\th_TH.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\tr.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\tr.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\uk.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\uk.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\vi.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\vi.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\zh_CN.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\zh_CN.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\js\\i18n\\keynav\\zh_TW.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\js\\i18n\\keynav\\zh_TW.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\help\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\help\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\image\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\image\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\image\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\image\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\image\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\image\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\importcss\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\importcss\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\importcss\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\importcss\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\importcss\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\importcss\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\insertdatetime\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\insertdatetime\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\insertdatetime\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\insertdatetime\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\insertdatetime\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\insertdatetime\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\link\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\link\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\link\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\link\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\link\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\link\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\lists\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\lists\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\lists\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\lists\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\lists\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\lists\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\media\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\media\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\media\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\media\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\media\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\media\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\nonbreaking\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\nonbreaking\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\nonbreaking\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\nonbreaking\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\nonbreaking\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\nonbreaking\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\pagebreak\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\pagebreak\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\pagebreak\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\pagebreak\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\pagebreak\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\pagebreak\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\preview\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\preview\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\preview\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\preview\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\preview\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\preview\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\quickbars\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\quickbars\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\quickbars\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\quickbars\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\quickbars\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\quickbars\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\save\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\save\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\save\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\save\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\save\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\save\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\searchreplace\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\searchreplace\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\searchreplace\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\searchreplace\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\searchreplace\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\searchreplace\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\table\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\table\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\table\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\table\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\table\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\table\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\template\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\template\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\template\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\template\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\template\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\template\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\visualblocks\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\visualblocks\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\visualblocks\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\visualblocks\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\visualblocks\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\visualblocks\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\visualchars\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\visualchars\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\visualchars\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\visualchars\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\visualchars\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\visualchars\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\wordcount\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\wordcount\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\wordcount\\plugin.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\wordcount\\plugin.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\plugins\\wordcount\\plugin.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\plugins\\wordcount\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\dark\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\dark\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\dark\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\dark\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\default\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\default\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\default\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\default\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\document\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\document\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\document\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\document\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\tinymce-5-dark\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\tinymce-5-dark\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\tinymce-5-dark\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\tinymce-5-dark\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\tinymce-5\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\tinymce-5\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\tinymce-5\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\tinymce-5\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\writer\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\writer\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\content\\writer\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\content\\writer\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide-dark\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide-dark\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide-dark\\content.inline.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide-dark\\content.inline.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide-dark\\content.inline.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide-dark\\content.inline.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide-dark\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide-dark\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide-dark\\skin.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide-dark\\skin.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide-dark\\skin.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide-dark\\skin.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide\\content.inline.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide\\content.inline.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide\\content.inline.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide\\content.inline.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide\\skin.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide\\skin.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide\\skin.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide\\skin.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5-dark\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5-dark\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5-dark\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5-dark\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5\\content.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5\\content.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5\\content.inline.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5\\content.inline.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5\\content.inline.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5\\content.inline.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5\\content.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5\\content.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5\\skin.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5\\skin.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5\\skin.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5\\skin.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.min.css",
+      "PackagePath": "staticwebassets\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.min.css"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\themes\\silver\\index.js",
+      "PackagePath": "staticwebassets\\tinymce\\themes\\silver\\index.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\themes\\silver\\theme.js",
+      "PackagePath": "staticwebassets\\tinymce\\themes\\silver\\theme.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\themes\\silver\\theme.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\themes\\silver\\theme.min.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\tinymce.d.ts",
+      "PackagePath": "staticwebassets\\tinymce\\tinymce.d.ts"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\tinymce.js",
+      "PackagePath": "staticwebassets\\tinymce\\tinymce.js"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\tinymce\\tinymce.min.js",
+      "PackagePath": "staticwebassets\\tinymce\\tinymce.min.js"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Blog.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
+using Blog.Services.Interfaces;
 
 namespace Blog.Data
 {
@@ -20,30 +21,24 @@ namespace Blog.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
-
-            modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole { Name = "Admin", NormalizedName = "Admin".ToUpper() });
         }
 
-        public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))
+        public override int SaveChanges()
         {
-            var AddedEntities = ChangeTracker.Entries().Where(E => E.State == EntityState.Added).ToList();
+            var entries = ChangeTracker.Entries().Where(e => e.Entity is BaseModel && (
+             e.State == EntityState.Added
+             || e.State == EntityState.Modified));
 
-            AddedEntities.ForEach(E =>
+            foreach (var entityEntry in entries)
             {
-                E.Property("CreatedAt").CurrentValue = DateTime.Now;
-            });
+                ((BaseModel)entityEntry.Entity).UpdatedAt = DateTime.Now;
 
-            var EditedEntities = ChangeTracker.Entries().Where(E => E.State == EntityState.Modified).ToList();
-
-            EditedEntities.ForEach(E =>
-            {
-                E.Property("UpdatedAt").CurrentValue = DateTime.Now;
-            });
-
-            return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+                if (entityEntry.State == EntityState.Added)
+                {
+                    ((BaseModel)entityEntry.Entity).CreatedAt = DateTime.Now;
+                }
+            }
+            return base.SaveChanges();
         }
 
         public DbSet<UserModel> User { get; set; }

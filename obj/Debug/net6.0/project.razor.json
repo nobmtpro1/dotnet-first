@@ -18399,6 +18399,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\.net\\Blog\\Areas\\Admin\\Views\\Article\\Add.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Article\\Add.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\.net\\Blog\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

@@ -37,8 +37,14 @@
 
     <script src="/cmshtml/assets/vendors/apexcharts/apexcharts.js"></script>
     <script src="/cmshtml/assets/js/pages/dashboard.js"></script>
-     <script src="/cmshtml/assets/vendors/simple-datatables/simple-datatables.js"></script>
+    <script src="/cmshtml/assets/vendors/simple-datatables/simple-datatables.js"></script>
+    <script src="/tinymce/tinymce.min.js"></script>
     <script src="/cmshtml/assets/js/main.js"></script>
+    <script>
+        tinymce.init({
+            selector: '.tinymce'
+        });
+    </script>
     
     @await RenderSectionAsync("Scripts", required: false)
 </body>
