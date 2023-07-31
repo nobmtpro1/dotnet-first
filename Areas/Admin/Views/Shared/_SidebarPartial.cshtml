@@ -14,7 +14,20 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class='sidebar-item @Html.IsActive("Article","Index")'>
+                        <li class='sidebar-item @Html.IsActiveMultiple(new List<dynamic>() {
+                            new {
+                                controller = "Article",
+                                action = "Index",
+                            },
+                            new {
+                                controller = "Article",
+                                action = "Add",
+                            },
+                                new {
+                                controller = "Article",
+                                action = "Edit",
+                            },
+                        })'>
                             <a asp-area="Admin" asp-controller="Article" asp-action="Index" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Article</span>

@@ -29,6 +29,7 @@ namespace Blog.Services.Implementation
             var query = _unitOfWork.ArticleRepository.GetAll();
             var data = query.Select(x => new ArticleViewModel()
             {
+                Id = x.Id!,
                 Title = x.Title!,
                 Content = x.Content!,
                 CreatedAt = x.CreatedAt!.Value,
@@ -51,6 +52,11 @@ namespace Blog.Services.Implementation
             return article;
         }
 
+        public ArticleModel GetById(Guid Id)
+        {
+            var article = _unitOfWork.ArticleRepository.GetById(Id);
+            return article;
+        }
         // public List<ProductCategoryViewModel> GetProductCategorys()
         // {
         //     _logger.LogDebug($"Get all product category");

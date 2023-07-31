@@ -14,6 +14,7 @@
           <th>Content</th>
           <th>Created at</th>
           <th>Updated at</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +33,10 @@
                 <td>
                   @article.UpdatedAt
                 </td>
+                <td>
+                  <a asp-action="Edit" asp-route-id="@article.Id" class="btn btn-primary m-2">EDIT</a>
+                  <a class="btn btn-danger m-2">DELETE</a>
+                  </td>
               </tr>
             }
         }

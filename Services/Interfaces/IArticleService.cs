@@ -10,6 +10,7 @@ namespace Blog.Services.Interfaces
     {
         public List<ArticleViewModel> GetAll();
         public ArticleModel Insert(ArticleViewModel model);
+        public ArticleModel GetById(Guid Id);
         // ProductCategoryViewModel GetProductCategory(int id);
         // void CreateProductCategory(ProductCategoryViewModel model);
         // void UpdateProductCategory(ProductCategoryViewModel model);

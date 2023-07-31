@@ -46,4 +46,24 @@ public class ArticleController : Controller
         TempData["Message"] = "Create successfully";
         return RedirectToAction("Add");
     }
+
+    [HttpGet]
+    public IActionResult Edit(Guid Id)
+    {
+        var article = _articleService.GetById(Id);
+        if (article == null)
+        {
+            return NotFound();
+        }
+        var model = new ArticleViewModel()
+        {
+            Id = article.Id,
+            Title = article.Title,
+            Content = article.Content,
+            UpdatedAt = article.UpdatedAt != null ? article.UpdatedAt!.Value : null,
+            CreatedAt = article.CreatedAt != null ? article.CreatedAt!.Value : null,
+        };
+
+        return View(model);
+    }
 }
