@@ -20,6 +20,16 @@ namespace Blog.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ArticleCategoryModel>()
+            .HasOne(g => g.Parent)
+            .WithMany(l => l.Children)
+            .HasForeignKey(g => g.ParentId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<ArticleModel>()
+            .HasMany(e => e.ArticleCategories)
+            .WithMany(e => e.Articles);
+
             base.OnModelCreating(modelBuilder);
         }
 

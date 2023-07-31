@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230730142719_init")]
+    [Migration("20230731093937_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -25,6 +25,50 @@ namespace Blog.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ArticleCategoryModelArticleModel", b =>
+                {
+                    b.Property<Guid>("ArticleCategoriesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ArticlesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ArticleCategoriesId", "ArticlesId");
+
+                    b.HasIndex("ArticlesId");
+
+                    b.ToTable("ArticleCategoryModelArticleModel");
+                });
+
+            modelBuilder.Entity("Blog.Models.ArticleCategoryModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ParentId")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Slug")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("ArticleCategory");
+                });
+
             modelBuilder.Entity("Blog.Models.ArticleModel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -36,6 +80,12 @@ namespace Blog.Migrations
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slug")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
@@ -275,6 +325,32 @@ namespace Blog.Migrations
                     b.HasDiscriminator().HasValue("UserModel");
                 });
 
+            modelBuilder.Entity("ArticleCategoryModelArticleModel", b =>
+                {
+                    b.HasOne("Blog.Models.ArticleCategoryModel", null)
+                        .WithMany()
+                        .HasForeignKey("ArticleCategoriesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Blog.Models.ArticleModel", null)
+                        .WithMany()
+                        .HasForeignKey("ArticlesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Blog.Models.ArticleCategoryModel", b =>
+                {
+                    b.HasOne("Blog.Models.ArticleCategoryModel", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Parent");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -324,6 +400,11 @@ namespace Blog.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Blog.Models.ArticleCategoryModel", b =>
+                {
+                    b.Navigation("Children");
                 });
 #pragma warning restore 612, 618
         }

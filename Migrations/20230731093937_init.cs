@@ -18,12 +18,36 @@ namespace Blog.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Slug = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Article", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ArticleCategory",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Slug = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ParentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArticleCategory", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ArticleCategory_ArticleCategory_ParentId",
+                        column: x => x.ParentId,
+                        principalTable: "ArticleCategory",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -68,6 +92,30 @@ namespace Blog.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ArticleCategoryModelArticleModel",
+                columns: table => new
+                {
+                    ArticleCategoriesId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ArticlesId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArticleCategoryModelArticleModel", x => new { x.ArticleCategoriesId, x.ArticlesId });
+                    table.ForeignKey(
+                        name: "FK_ArticleCategoryModelArticleModel_ArticleCategory_ArticleCategoriesId",
+                        column: x => x.ArticleCategoriesId,
+                        principalTable: "ArticleCategory",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ArticleCategoryModelArticleModel_Article_ArticlesId",
+                        column: x => x.ArticlesId,
+                        principalTable: "Article",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -177,6 +225,16 @@ namespace Blog.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_ArticleCategory_ParentId",
+                table: "ArticleCategory",
+                column: "ParentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ArticleCategoryModelArticleModel_ArticlesId",
+                table: "ArticleCategoryModelArticleModel",
+                column: "ArticlesId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
                 column: "RoleId");
@@ -220,7 +278,7 @@ namespace Blog.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Article");
+                name: "ArticleCategoryModelArticleModel");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -236,6 +294,12 @@ namespace Blog.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "ArticleCategory");
+
+            migrationBuilder.DropTable(
+                name: "Article");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

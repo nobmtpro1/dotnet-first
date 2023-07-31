@@ -40,7 +40,7 @@
                 </td>
                 <td>
                   <a asp-action="Edit" asp-route-id="@article.Id" class="btn btn-primary m-2">EDIT</a>
-                  <a asp-action="Delete" asp-route-id="@article.Id" class="btn btn-danger m-2">DELETE</a>
+                  <a onclick="return confirm('are you sure?')" asp-action="Delete" asp-route-id="@article.Id" class="btn btn-danger m-2">DELETE</a>
                   </td>
               </tr>
             }
