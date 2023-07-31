@@ -13,10 +13,9 @@ namespace Blog.Models
 
         public string? Slug { set; get; }
 
-        public Guid? ParentId { set; get; } = null!;
+        public Guid? ParentId { set; get; }
 
-        [ForeignKey("ParentId")]
-        public ArticleCategoryModel Parent { get; set; } = null!;
+        public ArticleCategoryModel? Parent { get; set; } = null!;
         public ICollection<ArticleCategoryModel> Children { get; set; } = null!;
 
         public List<ArticleModel> Articles { get; } = new();

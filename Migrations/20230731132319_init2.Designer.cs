@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230731093937_init")]
-    partial class init
+    [Migration("20230731132319_init2")]
+    partial class init2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +53,6 @@ namespace Blog.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("ParentId")
-                        .IsRequired()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Slug")
@@ -344,9 +343,7 @@ namespace Blog.Migrations
                 {
                     b.HasOne("Blog.Models.ArticleCategoryModel", "Parent")
                         .WithMany("Children")
-                        .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("ParentId");
 
                     b.Navigation("Parent");
                 });

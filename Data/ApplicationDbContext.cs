@@ -23,8 +23,7 @@ namespace Blog.Data
             modelBuilder.Entity<ArticleCategoryModel>()
             .HasOne(g => g.Parent)
             .WithMany(l => l.Children)
-            .HasForeignKey(g => g.ParentId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .HasForeignKey(g => g.ParentId);
 
             modelBuilder.Entity<ArticleModel>()
             .HasMany(e => e.ArticleCategories)
@@ -55,5 +54,6 @@ namespace Blog.Data
         public DbSet<IdentityUserRole<string>> UserRole { get; set; }
         public DbSet<IdentityRole> Role { get; set; }
         public DbSet<ArticleModel> Article { get; set; }
+        public DbSet<ArticleCategoryModel> ArticleCategory { get; set; }
     }
 }

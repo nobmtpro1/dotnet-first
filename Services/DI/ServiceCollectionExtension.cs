@@ -15,6 +15,7 @@ namespace Blog.Services.DI
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IArticleCategoryService, ArticleCategoryService>();
 
             return services;
         }

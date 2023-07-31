@@ -1,7 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using Blog.Data;
 using Blog.Models;
+using Blog.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Blog.Areas.Admin.ViewModels.Article
 {
@@ -15,7 +21,10 @@ namespace Blog.Areas.Admin.ViewModels.Article
 
         public string? Slug { set; get; }
 
-        public List<ArticleCategoryModel> ArticleCategories { get; } = new();
+        public List<Guid>? ArticleCategories { get; set; } = new();
+
+        public IEnumerable<SelectListItem>? ArticleCategoryList { get; set; }
+
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
     }

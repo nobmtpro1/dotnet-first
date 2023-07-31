@@ -14,6 +14,7 @@ namespace Blog.Services.Interfaces
         Task SaveChangesAsync();
 
         IArticleRepository ArticleRepository { get; }
+        IArticleCategoryRepository ArticleCategoryRepository { get; }
 
     }
 }

@@ -10,6 +10,7 @@ using System;
 using Blog.Areas.Admin.ViewModels.Article;
 using Blog.Services.Interfaces;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace Blog.Areas.Admin.Controllers;
 
@@ -18,11 +19,13 @@ public class ArticleController : Controller
 {
     private readonly ILogger<ArticleController> _logger;
     private IArticleService _articleService;
+    private IArticleCategoryService _articleCategoryService;
 
-    public ArticleController(ILogger<ArticleController> logger, IArticleService articleService)
+    public ArticleController(ILogger<ArticleController> logger, IArticleService articleService, IArticleCategoryService articleCategoryService)
     {
         _logger = logger;
         _articleService = articleService;
+        _articleCategoryService = articleCategoryService;
     }
 
     public IActionResult Index()
@@ -36,7 +39,10 @@ public class ArticleController : Controller
     [HttpGet]
     public IActionResult Add()
     {
-        return View();
+        var articleCategorySelectListItems = _articleCategoryService.GetArticleCategorySelectListItem();
+        ArticleViewModel model = new ArticleViewModel();
+        model.ArticleCategoryList = articleCategorySelectListItems;
+        return View(model);
     }
 
     [HttpPost]

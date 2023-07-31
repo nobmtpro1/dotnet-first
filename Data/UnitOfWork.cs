@@ -48,8 +48,10 @@ namespace Blog.Data
         }
 
         private IArticleRepository _articleRepository = null!;
-
         public IArticleRepository ArticleRepository => _articleRepository ?? (_articleRepository = new ArticleRepository(_dbContext));
+
+        private IArticleCategoryRepository _articleCategoryRepository = null!;
+        public IArticleCategoryRepository ArticleCategoryRepository => _articleCategoryRepository ?? (_articleCategoryRepository = new ArticleCategoryRepository(_dbContext));
 
         public void Dispose()
         {
