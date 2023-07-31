@@ -40,6 +40,7 @@ public class ArticleController : Controller
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult Add(ArticleViewModel model)
     {
         var article = _articleService.Insert(model);
@@ -65,5 +66,19 @@ public class ArticleController : Controller
         };
 
         return View(model);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Edit(ArticleViewModel model, Guid Id)
+    {
+        var article = _articleService.GetById(Id);
+        if (article == null)
+        {
+            return NotFound();
+        }
+        _articleService.Update(Id, model);
+        TempData["Message"] = "Update successfully";
+        return RedirectToAction("Edit", new { Id = Id });
     }
 }

@@ -57,6 +57,18 @@ namespace Blog.Services.Implementation
             var article = _unitOfWork.ArticleRepository.GetById(Id);
             return article;
         }
+
+        public ArticleModel Update(Guid Id, ArticleViewModel model)
+        {
+
+            var article = GetById(Id);
+            article.Title = model.Title;
+            article.Content = model.Content;
+            _unitOfWork.ArticleRepository.Update(article, x => x.Title!, x => x.Content!);
+            _unitOfWork.SaveChanges();
+
+            return article;
+        }
         // public List<ProductCategoryViewModel> GetProductCategorys()
         // {
         //     _logger.LogDebug($"Get all product category");
