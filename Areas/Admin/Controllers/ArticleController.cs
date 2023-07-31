@@ -81,4 +81,17 @@ public class ArticleController : Controller
         TempData["Message"] = "Update successfully";
         return RedirectToAction("Edit", new { Id = Id });
     }
+
+    [HttpGet]
+    public IActionResult Delete(Guid Id)
+    {
+        var article = _articleService.GetById(Id);
+        if (article == null)
+        {
+            return NotFound();
+        }
+        _articleService.Delete(article);
+        TempData["Message"] = "Delete successfully";
+        return RedirectToAction("Index");
+    }
 }

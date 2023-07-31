@@ -69,6 +69,13 @@ namespace Blog.Services.Implementation
 
             return article;
         }
+
+        public ArticleModel Delete(ArticleModel article)
+        {
+            _unitOfWork.ArticleRepository.Delete(article);
+            _unitOfWork.SaveChanges();
+            return article;
+        }
         // public List<ProductCategoryViewModel> GetProductCategorys()
         // {
         //     _logger.LogDebug($"Get all product category");

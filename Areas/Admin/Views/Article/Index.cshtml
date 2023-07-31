@@ -1,6 +1,11 @@
 @model Blog.Areas.Admin.ViewModels.Article.ArticleListViewModel
 <div class="card">
+
   <div class="card-body">
+      @if (!String.IsNullOrEmpty((string)TempData["message"]!))
+  {
+    <div class="alert alert-success" role="alert">@TempData["message"]</div>
+  }
     <div class="row mb-3">
       <div class="col">
           <a asp-action="Add" class="btn btn-primary">ADD</a>
@@ -35,7 +40,7 @@
                 </td>
                 <td>
                   <a asp-action="Edit" asp-route-id="@article.Id" class="btn btn-primary m-2">EDIT</a>
-                  <a class="btn btn-danger m-2">DELETE</a>
+                  <a asp-action="Delete" asp-route-id="@article.Id" class="btn btn-danger m-2">DELETE</a>
                   </td>
               </tr>
             }
