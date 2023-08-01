@@ -27,8 +27,8 @@ namespace Blog.Data
             .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ArticleModel>()
-            .HasMany(e => e.ArticleCategories)
-            .WithMany(e => e.Articles);
+            .HasMany<ArticleCategoryModel>(s => s.ArticleCategories)
+            .WithMany(c => c.Articles);
 
             base.OnModelCreating(modelBuilder);
         }

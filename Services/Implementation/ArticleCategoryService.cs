@@ -8,6 +8,7 @@ using Blog.Services.Interfaces;
 using Blog.Areas.Admin.ViewModels.Article;
 using Microsoft.Extensions.Logging;
 using Blog.Models;
+using Blog.Ultils;
 
 namespace Blog.Services.Implementation
 {
@@ -32,6 +33,24 @@ namespace Blog.Services.Implementation
         public IEnumerable<SelectListItem> GetArticleCategorySelectListItem()
         {
             var query = _unitOfWork.ArticleCategoryRepository.GetAll().Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name });
+            return query;
+        }
+
+        public IEnumerable<SelectListItem> GetArticleCategorySelectListItemWithSelected(Guid Id)
+        {
+            var query = GetArticleCategorySelectListItem().ToList();
+            var queryArticle = _unitOfWork.ArticleRepository.GetAll();
+            for (int i = 0; i < query.Count; i++)
+            {
+                var checkSelected = queryArticle.Where(p => p.ArticleCategories.Any(c => String.Equals(c.Id, query[i].Value))).Any();
+                
+                if (checkSelected == true)
+                {
+                    query[i].Selected = true;
+                }
+                query[i].Selected = true;
+            }
+            Dumper.Dump(query);
             return query;
         }
     }

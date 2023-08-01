@@ -9,6 +9,10 @@ namespace Blog.Models
     [Table("Article")]
     public class ArticleModel : BaseModel
     {
+        public ArticleModel()
+        {
+            this.ArticleCategories = new HashSet<ArticleCategoryModel>();
+        }
         public string? Title { set; get; }
 
         public string? Content { set; get; }
@@ -17,6 +21,6 @@ namespace Blog.Models
 
         public string? Slug { set; get; }
 
-        public List<ArticleCategoryModel> ArticleCategories { get; } = new();
+        public virtual ICollection<ArticleCategoryModel> ArticleCategories { get; set; }
     }
 }

@@ -11,6 +11,7 @@ using Blog.Areas.Admin.ViewModels.Article;
 using Blog.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using Blog.Ultils;
 
 namespace Blog.Areas.Admin.Controllers;
 
@@ -58,6 +59,7 @@ public class ArticleController : Controller
     public IActionResult Edit(Guid Id)
     {
         var article = _articleService.GetById(Id);
+        // Dumper.Dump(article.ArticleCategories);
         if (article == null)
         {
             return NotFound();
@@ -70,7 +72,16 @@ public class ArticleController : Controller
             UpdatedAt = article.UpdatedAt != null ? article.UpdatedAt!.Value : null,
             CreatedAt = article.CreatedAt != null ? article.CreatedAt!.Value : null,
         };
-
+        var articleCategorySelectListItems = _articleCategoryService.GetArticleCategorySelectListItem();
+        model.ArticleCategoryList = articleCategorySelectListItems;
+        var articleCategories = new List<Guid>() { };
+        foreach (var item in article.ArticleCategories)
+        {
+            articleCategories.Add(item.Id);
+        }
+        model.ArticleCategories = articleCategories;
+        
+        // Dumper.Dump(model);
         return View(model);
     }
 

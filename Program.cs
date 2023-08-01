@@ -17,7 +17,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(
-            builder.Configuration.GetConnectionString("MyBlogContext")));
+            builder.Configuration.GetConnectionString("MyBlogContext")
+        ).UseLazyLoadingProxies()
+);
 
 builder.Services.AddIdentity<UserModel, IdentityRole>()
         .AddEntityFrameworkStores<ApplicationDbContext>()

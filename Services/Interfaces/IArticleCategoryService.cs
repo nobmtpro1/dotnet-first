@@ -10,5 +10,6 @@ namespace Blog.Services.Interfaces
     {
         public List<ArticleCategoryModel> GetAll();
         public IEnumerable<SelectListItem> GetArticleCategorySelectListItem();
+        public IEnumerable<SelectListItem> GetArticleCategorySelectListItemWithSelected(Guid Id);
     }
 }
