@@ -9,7 +9,6 @@ namespace Blog.Data
     public class UnitOfWork : IUnitOfWork
     {
         private Guid _userId;
-        private IDbFactory _dbFactory = null!;
         private ApplicationDbContext _dbContext;
         private IDbContextTransaction transaction = null!;
 

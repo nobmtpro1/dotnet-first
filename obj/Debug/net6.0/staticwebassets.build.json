@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d02WMLFv76AOR/T9x57EeK4utL5MONrmgFm139Wi+9Y=",
+  "Hash": "JTG06e/Zcggq+NTAoOGulmEpwBE73PAwM7tEFFqXEgQ=",
   "Source": "Blog",
   "BasePath": "_content/Blog",
   "Mode": "Default",
@@ -34440,6 +34440,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\tinymce\\tinymce.min.js"
+    },
+    {
+      "Identity": "D:\\.net\\Blog\\wwwroot\\uploads\\images\\1469c508-5642-489c-9ec1-98c45c8aea1d.png",
+      "SourceId": "Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.net\\Blog\\wwwroot\\",
+      "BasePath": "_content/Blog",
+      "RelativePath": "uploads/images/1469c508-5642-489c-9ec1-98c45c8aea1d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\1469c508-5642-489c-9ec1-98c45c8aea1d.png"
     }
   ]
 }

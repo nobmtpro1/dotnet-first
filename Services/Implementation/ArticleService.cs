@@ -8,6 +8,9 @@ using Blog.Services.Interfaces;
 using Blog.Areas.Admin.ViewModels.Article;
 using Microsoft.Extensions.Logging;
 using Blog.Models;
+using Blog.Ultils;
+using Microsoft.AspNetCore.Hosting;
+using Blog;
 
 namespace Blog.Services.Implementation
 {
@@ -16,12 +19,14 @@ namespace Blog.Services.Implementation
         private readonly ILogger<ArticleService> _logger;
         private IConfiguration _config;
         private IUnitOfWork _unitOfWork;
+        private IWebHostEnvironment _hostingEnv;
 
-        public ArticleService(ILogger<ArticleService> logger, IConfiguration config, IUnitOfWork unitOfWork)
+        public ArticleService(ILogger<ArticleService> logger, IConfiguration config, IUnitOfWork unitOfWork, IWebHostEnvironment hostingEnv)
         {
             _logger = logger;
             _config = config;
             _unitOfWork = unitOfWork;
+            _hostingEnv = hostingEnv;
         }
 
         public List<ArticleViewModel> GetAll()
@@ -74,6 +79,23 @@ namespace Blog.Services.Implementation
             article.Title = model.Title;
             article.Content = model.Content;
             _unitOfWork.ArticleRepository.Update(article, x => x.Title!, x => x.Content!);
+            foreach (var item in article.ArticleCategories)
+            {
+                article.ArticleCategories.Remove(item);
+            }
+            if (model.ArticleCategories != null)
+            {
+                var articleCategories = _unitOfWork.ArticleCategoryRepository.GetAll().Where(x => model.ArticleCategories.Contains(x.Id)).ToList();
+                foreach (var item in articleCategories)
+                {
+                    article.ArticleCategories.Add(item);
+                }
+            }
+            if (model.ImageFile != null)
+            {
+                var fileName = Helper.UploadFile(model.ImageFile, _hostingEnv.WebRootPath, Const.UPLOAD_IMAGE_DIR);
+                article.Image = fileName;
+            }
             _unitOfWork.SaveChanges();
 
             return article;

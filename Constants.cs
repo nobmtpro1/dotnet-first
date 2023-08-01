@@ -4,7 +4,7 @@ using System.Configuration;
 
 namespace Blog
 {
-    public static class Constants
+    public static class Const
     {
         public enum Month
         {
@@ -35,5 +35,9 @@ namespace Blog
         }
 
         public const string ROLE_ADMIN = "admin";
+
+        public const string UPLOAD_DIR = "uploads";
+        public const string UPLOAD_IMAGE_DIR = UPLOAD_DIR + "/images";
+
     }
 }

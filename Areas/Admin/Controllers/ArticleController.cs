@@ -12,21 +12,25 @@ using Blog.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using Blog.Ultils;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Blog.Areas.Admin.Controllers;
 
-[Authorize(Roles = Constants.ROLE_ADMIN)]
+[Authorize(Roles = Const.ROLE_ADMIN)]
 public class ArticleController : Controller
 {
     private readonly ILogger<ArticleController> _logger;
     private IArticleService _articleService;
     private IArticleCategoryService _articleCategoryService;
+    private IWebHostEnvironment _hostingEnv;
 
-    public ArticleController(ILogger<ArticleController> logger, IArticleService articleService, IArticleCategoryService articleCategoryService)
+    public ArticleController(ILogger<ArticleController> logger, IArticleService articleService, IArticleCategoryService articleCategoryService, IWebHostEnvironment hostingEnv)
     {
         _logger = logger;
         _articleService = articleService;
         _articleCategoryService = articleCategoryService;
+        _hostingEnv = hostingEnv;
     }
 
     public IActionResult Index()
@@ -69,6 +73,8 @@ public class ArticleController : Controller
             Id = article.Id,
             Title = article.Title,
             Content = article.Content,
+            Image = article.Image,
+            Slug = article.Slug,
             UpdatedAt = article.UpdatedAt != null ? article.UpdatedAt!.Value : null,
             CreatedAt = article.CreatedAt != null ? article.CreatedAt!.Value : null,
         };
@@ -80,8 +86,9 @@ public class ArticleController : Controller
             articleCategories.Add(item.Id);
         }
         model.ArticleCategories = articleCategories;
-        
+
         // Dumper.Dump(model);
+        ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
         return View(model);
     }
 

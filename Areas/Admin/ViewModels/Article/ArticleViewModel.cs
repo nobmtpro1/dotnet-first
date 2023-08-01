@@ -5,6 +5,7 @@ using System.Linq;
 using Blog.Data;
 using Blog.Models;
 using Blog.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,9 +18,10 @@ namespace Blog.Areas.Admin.ViewModels.Article
         [Required]
         public string? Title { get; set; }
         public string? Content { get; set; }
-        public string? Image { set; get; }
+        public IFormFile? ImageFile { get; set; }
 
         public string? Slug { set; get; }
+        public string? Image { set; get; }
 
         public List<Guid>? ArticleCategories { get; set; } = new();
 

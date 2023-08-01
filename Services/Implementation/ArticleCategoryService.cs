@@ -50,7 +50,6 @@ namespace Blog.Services.Implementation
                 }
                 query[i].Selected = true;
             }
-            Dumper.Dump(query);
             return query;
         }
     }

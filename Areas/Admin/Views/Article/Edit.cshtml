@@ -6,7 +6,7 @@
       <div class="alert alert-success" role="alert">@TempData["message"]</div>
     }
     <div class="row">
-      <form class="col" method="post">
+      <form class="col" method="post" enctype="multipart/form-data">
         @Html.AntiForgeryToken()
         <div class="form-group">
           <label asp-for="ArticleCategories" class="control-label"></label>
@@ -14,8 +14,18 @@
             asp-for="ArticleCategories"
             asp-items="@Model.ArticleCategoryList"
             class="form-control"
-          >
-          </select>
+          ></select>
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.ImageFile"></label>
+          <input class="form-control" asp-for="@Model.ImageFile" />
+          <p>
+            <small>
+              @Html.ValidationMessageFor(m => m.ImageFile, "", new { @class
+              ="text-danger" })
+            </small>
+          </p>
+          <img width="200" src='@ViewData["imagePath"]/@Model.Image' alt="">
         </div>
         <div class="form-group">
           <label asp-for="@Model.Title"></label>
@@ -23,6 +33,16 @@
           <p>
             <small>
               @Html.ValidationMessageFor(m => m.Title, "", new { @class
+              ="text-danger" })
+            </small>
+          </p>
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.Slug"></label>
+          <input class="form-control" asp-for="@Model.Slug" />
+          <p>
+            <small>
+              @Html.ValidationMessageFor(m => m.Slug, "", new { @class
               ="text-danger" })
             </small>
           </p>
