@@ -50,10 +50,10 @@ namespace Blog.Data
             return base.SaveChanges();
         }
 
-        public DbSet<UserModel> User { get; set; }
-        public DbSet<IdentityUserRole<string>> UserRole { get; set; }
-        public DbSet<IdentityRole> Role { get; set; }
-        public DbSet<ArticleModel> Article { get; set; }
-        public DbSet<ArticleCategoryModel> ArticleCategory { get; set; }
+        public DbSet<UserModel> User { get; set; } = null!;
+        public DbSet<IdentityUserRole<string>> UserRole { get; set; } = null!;
+        public DbSet<IdentityRole> Role { get; set; } = null!;
+        public DbSet<ArticleModel> Article { get; set; } = null!;
+        public DbSet<ArticleCategoryModel> ArticleCategory { get; set; } = null!;
     }
 }

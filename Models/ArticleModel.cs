@@ -17,6 +17,6 @@ namespace Blog.Models
 
         public string? Slug { set; get; }
 
-        public List<ArticleCategoryModel>? ArticleCategories { get; } = new();
+        public List<ArticleCategoryModel> ArticleCategories { get; } = new();
     }
 }
