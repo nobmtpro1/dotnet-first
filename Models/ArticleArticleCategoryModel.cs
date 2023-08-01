@@ -10,8 +10,8 @@ public class ArticleArticleCategoryModel
     public Guid ArticleCategoryId { get; set; }
 
     [ForeignKey("ArticleId")]
-    public ArticleModel Article { get; set; } = null!;
+    public ArticleModel Article { get; set; } = new();
 
     [ForeignKey("ArticleCategoryId")]
-    public ArticleCategoryModel ArticleCategory { get; set; } = null!;
+    public ArticleCategoryModel ArticleCategory { get; set; } = new();
 }

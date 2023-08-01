@@ -16,7 +16,7 @@ namespace Blog.Models
         public Guid? ParentId { set; get; }
 
         public ArticleCategoryModel? Parent { get; set; } = null!;
-        public ICollection<ArticleCategoryModel> Children { get; set; } = null!;
+        public ICollection<ArticleCategoryModel> Children { get; set; } = new List<ArticleCategoryModel>();
 
         public List<ArticleModel> Articles { get; } = new();
     }
