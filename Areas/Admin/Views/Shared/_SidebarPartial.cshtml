@@ -13,27 +13,46 @@
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
-
-                        <li class='sidebar-item @Html.IsActiveMultiple(new List<dynamic>() {
-                            new {
-                                controller = "Article",
-                                action = "Index",
-                            },
-                            new {
-                                controller = "Article",
-                                action = "Add",
-                            },
+                        <li class='sidebar-item  has-sub @Html.IsActiveMultiple(new List<dynamic>() {
                                 new {
-                                controller = "Article",
-                                action = "Edit",
-                            },
-                        })'>
-                            <a asp-area="Admin" asp-controller="Article" asp-action="Index" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
+                                    controller = "Article",
+                                    action = "Index",
+                                },
+                                new {
+                                    controller = "Article",
+                                    action = "Add",
+                                },
+                                    new {
+                                    controller = "Article",
+                                    action = "Edit",
+                                },
+                            })'>
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
                                 <span>Article</span>
                             </a>
+                            <ul class="submenu active">
+                                <li class="submenu-item ">
+                                    <a href="">Category</a>
+                                </li>
+                                <li class='submenu-item @Html.IsActiveMultiple(new List<dynamic>() {
+                                    new {
+                                        controller = "Article",
+                                        action = "Index",
+                                    },
+                                    new {
+                                        controller = "Article",
+                                        action = "Add",
+                                    },
+                                        new {
+                                        controller = "Article",
+                                        action = "Edit",
+                                    },
+                                })'>
+                                    <a asp-area="Admin" asp-controller="Article" asp-action="Index">Article</a>
+                                </li>
+                            </ul>
                         </li>
-
                         <li class="sidebar-item  has-sub ">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>

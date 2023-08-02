@@ -13,6 +13,7 @@ namespace Blog.Services.Interfaces
         public ArticleModel GetById(Guid Id);
         public ArticleModel Update(Guid Id, ArticleViewModel model);
         public ArticleModel Delete(ArticleModel article);
+        public bool CheckSlugExist(string slug);
         // ProductCategoryViewModel GetProductCategory(int id);
         // void CreateProductCategory(ProductCategoryViewModel model);
         // void UpdateProductCategory(ProductCategoryViewModel model);

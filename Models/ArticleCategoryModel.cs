@@ -14,13 +14,13 @@ namespace Blog.Models
         {
             this.Articles = new HashSet<ArticleModel>();
         }
-        public string? Name { set; get; }
+        public string Name { set; get; } = default!;
 
-        public string? Slug { set; get; }
+        public string Slug { set; get; } = default!;
 
         public Guid? ParentId { set; get; }
 
-        public virtual  ArticleCategoryModel? Parent { get; set; } = null!;
+        public virtual ArticleCategoryModel? Parent { get; set; } = null!;
         public virtual ICollection<ArticleCategoryModel> Children { get; set; } = new List<ArticleCategoryModel>();
 
         public virtual ICollection<ArticleModel> Articles { get; set; }

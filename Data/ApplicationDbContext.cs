@@ -30,6 +30,10 @@ namespace Blog.Data
             .HasMany<ArticleCategoryModel>(s => s.ArticleCategories)
             .WithMany(c => c.Articles);
 
+            modelBuilder.Entity<ArticleModel>()
+            .HasIndex(u => u.Slug)
+            .IsUnique();
+
             base.OnModelCreating(modelBuilder);
         }
 

@@ -15,12 +15,14 @@ namespace Blog.Areas.Admin.ViewModels.Article
     public class ArticleViewModel
     {
         public Guid? Id { get; set; }
+
         [Required]
-        public string? Title { get; set; }
+        public string Title { get; set; } = default!;
         public string? Content { get; set; }
         public IFormFile? ImageFile { get; set; }
 
-        public string? Slug { set; get; }
+        [Required]
+        public string Slug { set; get; } = default!;
         public string? Image { set; get; }
 
         public List<Guid>? ArticleCategories { get; set; } = new();

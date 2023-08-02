@@ -13,13 +13,13 @@ namespace Blog.Models
         {
             this.ArticleCategories = new HashSet<ArticleCategoryModel>();
         }
-        public string? Title { set; get; }
+        public string Title { set; get; } = default!;
 
         public string? Content { set; get; }
 
         public string? Image { set; get; }
 
-        public string? Slug { set; get; }
+        public string Slug { set; get; } = default!;
 
         public virtual ICollection<ArticleCategoryModel> ArticleCategories { get; set; }
     }

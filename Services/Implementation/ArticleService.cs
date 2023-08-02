@@ -68,7 +68,7 @@ namespace Blog.Services.Implementation
                 var fileName = Helper.UploadFile(model.ImageFile, _hostingEnv.WebRootPath, Const.UPLOAD_IMAGE_DIR);
                 article.Image = fileName;
             }
-            
+
             _unitOfWork.ArticleRepository.Insert(article);
             _unitOfWork.SaveChanges();
             return article;
@@ -114,6 +114,12 @@ namespace Blog.Services.Implementation
             _unitOfWork.ArticleRepository.Delete(article);
             _unitOfWork.SaveChanges();
             return article;
+        }
+
+        public bool CheckSlugExist(string slug)
+        {
+            var isExist = _unitOfWork.ArticleRepository.GetAll().Where(x => x.Slug == slug).Any();
+            return isExist;
         }
     }
 }

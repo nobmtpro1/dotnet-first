@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using Blog.Ultils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
+using System.Data.SqlClient;
 
 namespace Blog.Areas.Admin.Controllers;
 
@@ -44,9 +45,8 @@ public class ArticleController : Controller
     [HttpGet]
     public IActionResult Add()
     {
-        var articleCategorySelectListItems = _articleCategoryService.GetArticleCategorySelectListItem();
         ArticleViewModel model = new ArticleViewModel();
-        model.ArticleCategoryList = articleCategorySelectListItems;
+        model = _initArticleViewModel(model, null);
         return View(model);
     }
 
@@ -54,9 +54,20 @@ public class ArticleController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Add(ArticleViewModel model)
     {
-        var article = _articleService.Insert(model);
-        TempData["Message"] = "Create successfully";
-        return RedirectToAction("Add");
+        if (ModelState.IsValid)
+        {
+            model.Slug = Helper.GenerateSlug(model.Slug);
+            if (_articleService.CheckSlugExist(model.Slug))
+            {
+                ModelState.AddModelError("Slug", "Slug is already existed");
+                return View(model);
+            }
+            var article = _articleService.Insert(model);
+            TempData["Message"] = "Create successfully";
+            return RedirectToAction("Add");
+        }
+        model = _initArticleViewModel(model, null);
+        return View(model);
     }
 
     [HttpGet]
@@ -78,15 +89,8 @@ public class ArticleController : Controller
             UpdatedAt = article.UpdatedAt != null ? article.UpdatedAt!.Value : null,
             CreatedAt = article.CreatedAt != null ? article.CreatedAt!.Value : null,
         };
-        var articleCategorySelectListItems = _articleCategoryService.GetArticleCategorySelectListItem();
-        model.ArticleCategoryList = articleCategorySelectListItems;
-        var articleCategories = new List<Guid>() { };
-        foreach (var item in article.ArticleCategories)
-        {
-            articleCategories.Add(item.Id);
-        }
-        model.ArticleCategories = articleCategories;
 
+        model = _initArticleViewModel(model, article);
         // Dumper.Dump(model);
         ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
         return View(model);
@@ -101,9 +105,21 @@ public class ArticleController : Controller
         {
             return NotFound();
         }
-        _articleService.Update(Id, model);
-        TempData["Message"] = "Update successfully";
-        return RedirectToAction("Edit", new { Id = Id });
+        if (ModelState.IsValid)
+        {
+            model.Slug = Helper.GenerateSlug(model.Slug);
+            if (article.Slug != model.Slug && _articleService.CheckSlugExist(model.Slug))
+            {
+                ModelState.AddModelError("Slug", "Slug is already existed");
+                model = _initArticleViewModel(model, article);
+                return View(model);
+            }
+            _articleService.Update(Id, model);
+            TempData["Message"] = "Update successfully";
+            return RedirectToAction("Edit", new { Id = Id });
+        }
+        model = _initArticleViewModel(model, article);
+        return View(model);
     }
 
     [HttpGet]
@@ -117,5 +133,23 @@ public class ArticleController : Controller
         _articleService.Delete(article);
         TempData["Message"] = "Delete successfully";
         return RedirectToAction("Index");
+    }
+
+    private ArticleViewModel _initArticleViewModel(ArticleViewModel model, ArticleModel? article)
+    {
+        var articleCategorySelectListItems = _articleCategoryService.GetArticleCategorySelectListItem();
+        model.ArticleCategoryList = articleCategorySelectListItems;
+
+        if (article != null)
+        {
+            var articleCategories = new List<Guid>() { };
+            foreach (var item in article.ArticleCategories)
+            {
+                articleCategories.Add(item.Id);
+            }
+            model.ArticleCategories = articleCategories;
+        }
+
+        return model;
     }
 }
