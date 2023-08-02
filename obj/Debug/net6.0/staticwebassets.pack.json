@@ -7957,6 +7957,14 @@
       "PackagePath": "staticwebassets\\uploads\\images\\1469c508-5642-489c-9ec1-98c45c8aea1d.png"
     },
     {
+      "Id": "D:\\.net\\Blog\\wwwroot\\uploads\\images\\56682a37-1160-4dcb-ba7d-e46e88b1bd8e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\56682a37-1160-4dcb-ba7d-e46e88b1bd8e.jpg"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\uploads\\images\\bbc819cf-bec8-4d10-90da-c4b97d4318bb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\bbc819cf-bec8-4d10-90da-c4b97d4318bb.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Blog.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

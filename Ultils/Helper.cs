@@ -18,8 +18,7 @@ public static class Helper
 
     public static string UploadFile(IFormFile file, string WebRootPath, string uploadDirectory)
     {
-        var uploadDir = "uploads/" + uploadDirectory;
-        var uploadPath = Path.Combine(WebRootPath, uploadDir);
+        var uploadPath = Path.Combine(WebRootPath, uploadDirectory);
 
         if (!Directory.Exists(uploadPath))
             Directory.CreateDirectory(uploadPath);

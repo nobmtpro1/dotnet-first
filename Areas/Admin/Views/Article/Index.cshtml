@@ -8,7 +8,7 @@
   }
     <div class="row mb-3">
       <div class="col">
-          <a asp-action="Add" class="btn btn-primary">ADD</a>
+          <a asp-action="Add" class="btn btn-primary btn-sm">ADD</a>
       </div>
     </div>
     <table class="table table-striped" id="table1">
@@ -39,8 +39,8 @@
                   @article.UpdatedAt
                 </td>
                 <td>
-                  <a asp-action="Edit" asp-route-id="@article.Id" class="btn btn-primary m-2">EDIT</a>
-                  <a onclick="return confirm('are you sure?')" asp-action="Delete" asp-route-id="@article.Id" class="btn btn-danger m-2">DELETE</a>
+                  <a asp-action="Edit" asp-route-id="@article.Id" class="btn btn-primary m-2 btn-sm">EDIT</a>
+                  <a onclick="return confirm('are you sure?')" asp-action="Delete" asp-route-id="@article.Id" class="btn btn-danger m-2 btn-sm">DELETE</a>
                   </td>
               </tr>
             }

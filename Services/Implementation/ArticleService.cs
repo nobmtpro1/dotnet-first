@@ -51,6 +51,7 @@ namespace Blog.Services.Implementation
                 Id = Guid.NewGuid(),
                 Title = model.Title,
                 Content = model.Content,
+                Slug = model.Slug,
             };
             if (model.ArticleCategories != null)
             {
@@ -62,6 +63,12 @@ namespace Blog.Services.Implementation
                 }
             }
 
+            if (model.ImageFile != null)
+            {
+                var fileName = Helper.UploadFile(model.ImageFile, _hostingEnv.WebRootPath, Const.UPLOAD_IMAGE_DIR);
+                article.Image = fileName;
+            }
+            
             _unitOfWork.ArticleRepository.Insert(article);
             _unitOfWork.SaveChanges();
             return article;
@@ -78,7 +85,8 @@ namespace Blog.Services.Implementation
             var article = GetById(Id);
             article.Title = model.Title;
             article.Content = model.Content;
-            _unitOfWork.ArticleRepository.Update(article, x => x.Title!, x => x.Content!);
+            article.Slug = model.Slug;
+            _unitOfWork.ArticleRepository.Update(article, x => x.Title!, x => x.Content!, x => x.Slug!);
             foreach (var item in article.ArticleCategories)
             {
                 article.ArticleCategories.Remove(item);
