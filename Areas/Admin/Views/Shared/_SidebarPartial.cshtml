@@ -33,7 +33,7 @@
                             </a>
                             <ul class="submenu active">
                                 <li class="submenu-item ">
-                                    <a href="">Category</a>
+                                    <a asp-area="Admin" asp-controller="ArticleCategory" asp-action="Index">Category</a>
                                 </li>
                                 <li class='submenu-item @Html.IsActiveMultiple(new List<dynamic>() {
                                     new {
@@ -53,21 +53,6 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="sidebar-item  has-sub ">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
-                                <span>Components</span>
-                            </a>
-                            <ul class="submenu active">
-                                <li class="submenu-item ">
-                                    <a href="component-alert.html">Alert</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-badge.html">Badge</a>
-                                </li>
-                            </ul>
-                        </li>
-
                         <li class="sidebar-item">
                             <a asp-area="" asp-controller="Account" asp-action="Logout" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>

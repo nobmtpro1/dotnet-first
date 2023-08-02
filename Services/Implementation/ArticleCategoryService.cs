@@ -9,6 +9,7 @@ using Blog.Areas.Admin.ViewModels.Article;
 using Microsoft.Extensions.Logging;
 using Blog.Models;
 using Blog.Ultils;
+using Blog.Areas.Admin.ViewModels.ArticleCategory;
 
 namespace Blog.Services.Implementation
 {
@@ -43,7 +44,7 @@ namespace Blog.Services.Implementation
             for (int i = 0; i < query.Count; i++)
             {
                 var checkSelected = queryArticle.Where(p => p.ArticleCategories.Any(c => String.Equals(c.Id, query[i].Value))).Any();
-                
+
                 if (checkSelected == true)
                 {
                     query[i].Selected = true;
@@ -51,6 +52,20 @@ namespace Blog.Services.Implementation
                 query[i].Selected = true;
             }
             return query;
+        }
+
+        public ArticleCategoryModel Insert(ArticleCategoryViewModel model)
+        {
+            var articleCategory = new ArticleCategoryModel()
+            {
+                Id = Guid.NewGuid(),
+                Name = model.Name,
+                ParentId = model.ParentId,
+                Slug = model.Slug,
+            };
+            _unitOfWork.ArticleCategoryRepository.Insert(articleCategory);
+            _unitOfWork.SaveChanges();
+            return articleCategory;
         }
     }
 }
