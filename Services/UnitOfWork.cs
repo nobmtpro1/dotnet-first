@@ -1,26 +1,36 @@
 using System;
 using Blog.Models;
 using Blog.Data;
+using Blog.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using Castle.Core.Configuration;
 
 namespace Blog.Services
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IDisposable, IUnitOfWork
     {
         private ApplicationDbContext context = default!;
         private GenericRepository<ArticleModel> articleRepository = default!;
         private GenericRepository<ArticleCategoryModel> articleCategoryRepository = default!;
 
-        public UnitOfWork(ApplicationDbContext _context){
-            context  = _context!;
+        public UnitOfWork(ApplicationDbContext _context)
+        {
+            context = _context;
+            // context = new ApplicationDbContext(options.Options);
+            //     var contextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
+            //  .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Mentoring.Data;Trusted_Connection=True;MultipleActiveResultSets=true")
+            //  .Options;
+            //     context = new ApplicationDbContext(contextOptions);
         }
 
         public GenericRepository<ArticleModel> ArticleRepository
         {
             get
             {
-                if (this.articleRepository == null)
+                if (articleRepository == null)
                 {
-                    this.articleRepository = new GenericRepository<ArticleModel>(context);
+                    articleRepository = new GenericRepository<ArticleModel>(context);
                 }
                 return articleRepository;
             }
@@ -30,9 +40,9 @@ namespace Blog.Services
         {
             get
             {
-                if (this.articleCategoryRepository == null)
+                if (articleCategoryRepository == null)
                 {
-                    this.articleCategoryRepository = new GenericRepository<ArticleCategoryModel>(context);
+                    articleCategoryRepository = new GenericRepository<ArticleCategoryModel>(context);
                 }
                 return articleCategoryRepository;
             }

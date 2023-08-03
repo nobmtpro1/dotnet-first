@@ -11,7 +11,7 @@ namespace Blog.Services.Repository
 {
     public class ArticleRepository : IArticleRepository, IDisposable
     {
-        private ApplicationDbContext context;
+        private readonly ApplicationDbContext context;
 
         public ArticleRepository(ApplicationDbContext context)
         {

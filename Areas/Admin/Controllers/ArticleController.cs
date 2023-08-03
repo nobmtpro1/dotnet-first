@@ -15,6 +15,7 @@ using Blog.Ultils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
 using System.Data.SqlClient;
+using Blog.Services;
 
 namespace Blog.Areas.Admin.Controllers;
 
@@ -24,20 +25,39 @@ public class ArticleController : Controller
 {
     private readonly ILogger<ArticleController> _logger;
     private IWebHostEnvironment _hostingEnv;
+    private IUnitOfWork _unitOfWork;
 
-    public ArticleController(ILogger<ArticleController> logger, IWebHostEnvironment hostingEnv)
+    public ArticleController(ILogger<ArticleController> logger, IWebHostEnvironment hostingEnv, IUnitOfWork unitOfWork)
     {
         _logger = logger;
         _hostingEnv = hostingEnv;
+        _unitOfWork = unitOfWork;
     }
 
     public IActionResult Index()
     {
-        // ArticleListViewModel model = new ArticleListViewModel();
+        ArticleListViewModel model = new ArticleListViewModel();
         // var articles = _articleService.GetAll();
         // model.Articles = articles;
         // return View(model);
-        return View();
+        var articles = _unitOfWork.ArticleRepository.Get();
+        Helper.Dump(articles);
+        var articlesList = new List<ArticleViewModel>();
+        foreach (var article in articles)
+        {
+            articlesList.Add(new ArticleViewModel()
+            {
+                Id = article.Id,
+                Title = article.Title,
+                Content = article.Content,
+                Image = article.Image,
+                Slug = article.Slug,
+                UpdatedAt = article.UpdatedAt != null ? article.UpdatedAt!.Value : null,
+                CreatedAt = article.CreatedAt != null ? article.CreatedAt!.Value : null,
+            });
+        }
+        model.Articles = articlesList;
+        return View(model);
     }
 
     // [HttpGet]

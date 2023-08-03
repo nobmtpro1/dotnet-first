@@ -12,7 +12,9 @@ namespace Blog.Services.DI
     public static class ServiceCollectionExtension
     {
         public static IServiceCollection AddServiceCollection(this IServiceCollection services)
-        {            
+        {
+            // services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }
     }
