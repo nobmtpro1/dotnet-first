@@ -5,7 +5,7 @@ using Blog.Services.Interfaces;
 
 namespace Blog.Models
 {
-    public class BaseModel : IBaseModel, IEntity<Guid>
+    public class BaseModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
