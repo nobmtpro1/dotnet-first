@@ -26,13 +26,38 @@
                                     controller = "Article",
                                     action = "Edit",
                                 },
+                                new {
+                                    controller = "ArticleCategory",
+                                    action = "Index",
+                                },
+                                new {
+                                    controller = "ArticleCategory",
+                                    action = "Add",
+                                },
+                                    new {
+                                    controller = "ArticleCategory",
+                                    action = "Edit",
+                                },
                             })'>
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
                                 <span>Article</span>
                             </a>
                             <ul class="submenu active">
-                                <li class="submenu-item ">
+                                <li class='submenu-item @Html.IsActiveMultiple(new List<dynamic>() {
+                                    new {
+                                        controller = "ArticleCategory",
+                                        action = "Index",
+                                    },
+                                    new {
+                                        controller = "ArticleCategory",
+                                        action = "Add",
+                                    },
+                                        new {
+                                        controller = "ArticleCategory",
+                                        action = "Edit",
+                                    },
+                                })'>
                                     <a asp-area="Admin" asp-controller="ArticleCategory" asp-action="Index">Category</a>
                                 </li>
                                 <li class='submenu-item @Html.IsActiveMultiple(new List<dynamic>() {

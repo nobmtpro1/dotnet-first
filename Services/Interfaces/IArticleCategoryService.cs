@@ -13,5 +13,9 @@ namespace Blog.Services.Interfaces
         public IEnumerable<SelectListItem> GetArticleCategorySelectListItem();
         public IEnumerable<SelectListItem> GetArticleCategorySelectListItemWithSelected(Guid Id);
         public ArticleCategoryModel Insert(ArticleCategoryViewModel model);
+        public ArticleCategoryModel GetById(Guid Id);
+        public bool CheckSlugExist(string slug);
+        public ArticleCategoryModel Update(Guid Id, ArticleCategoryViewModel model);
+        public ArticleCategoryModel Delete(ArticleCategoryModel article);
     }
 }

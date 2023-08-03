@@ -67,5 +67,34 @@ namespace Blog.Services.Implementation
             _unitOfWork.SaveChanges();
             return articleCategory;
         }
+
+        public ArticleCategoryModel GetById(Guid Id)
+        {
+            var articleCategory = _unitOfWork.ArticleCategoryRepository.GetById(Id);
+            return articleCategory;
+        }
+        public bool CheckSlugExist(string slug)
+        {
+            var isExist = _unitOfWork.ArticleCategoryRepository.GetAll().Where(x => x.Slug == slug).Any();
+            return isExist;
+        }
+
+        public ArticleCategoryModel Update(Guid Id, ArticleCategoryViewModel model)
+        {
+            var articleCategory = GetById(Id);
+            articleCategory.Name = model.Name;
+            articleCategory.ParentId = model.ParentId;
+            articleCategory.Slug = model.Slug;
+            _unitOfWork.ArticleCategoryRepository.Update(articleCategory, x => x.Name!, x => x.ParentId!, x => x.Slug!);
+            _unitOfWork.SaveChanges();
+            return articleCategory;
+        }
+
+        public ArticleCategoryModel Delete(ArticleCategoryModel articleCategory)
+        {
+            _unitOfWork.ArticleCategoryRepository.Delete(articleCategory);
+            _unitOfWork.SaveChanges();
+            return articleCategory;
+        }
     }
 }

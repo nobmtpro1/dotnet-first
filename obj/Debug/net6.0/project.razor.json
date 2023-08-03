@@ -18459,6 +18459,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\.net\\Blog\\Areas\\Admin\\Views\\ArticleCategory\\Edit.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\ArticleCategory\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\.net\\Blog\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"

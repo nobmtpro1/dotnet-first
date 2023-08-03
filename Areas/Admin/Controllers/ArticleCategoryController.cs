@@ -57,17 +57,7 @@ public class ArticleCategoryController : Controller
     public IActionResult Add()
     {
         ArticleCategoryViewModel model = new ArticleCategoryViewModel();
-        var articleCategories = _articleCategoryService.GetAll();
-        var parentList = new List<SelectListItem>();
-        foreach (var item in articleCategories)
-        {
-            parentList.Add(new SelectListItem()
-            {
-                Text = item.Name,
-                Value = item.Id.ToString()
-            });
-        }
-        model.ParentList = parentList;
+        model = _initArticleCategoryViewModel(model);
         return View(model);
     }
 
@@ -83,5 +73,88 @@ public class ArticleCategoryController : Controller
         }
 
         return View(model);
+    }
+
+    [HttpGet]
+    public IActionResult Edit(Guid Id)
+    {
+        var articleCategory = _articleCategoryService.GetById(Id);
+        // Dumper.Dump(article.ArticleCategories);
+        if (articleCategory == null)
+        {
+            return NotFound();
+        }
+        var model = new ArticleCategoryViewModel()
+        {
+            Id = articleCategory.Id,
+            Name = articleCategory.Name,
+            Slug = articleCategory.Slug,
+            ParentId = articleCategory.ParentId,
+            UpdatedAt = articleCategory.UpdatedAt,
+            CreatedAt = articleCategory.CreatedAt,
+        };
+
+        model = _initArticleCategoryViewModel(model, Id);
+        return View(model);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Edit(ArticleCategoryViewModel model, Guid Id)
+    {
+        var article = _articleCategoryService.GetById(Id);
+        if (article == null)
+        {
+            return NotFound();
+        }
+        if (ModelState.IsValid)
+        {
+            model.Slug = Helper.GenerateSlug(model.Slug);
+            if (article.Slug != model.Slug && _articleCategoryService.CheckSlugExist(model.Slug))
+            {
+                ModelState.AddModelError("Slug", "Slug is already existed");
+                model = _initArticleCategoryViewModel(model, Id);
+                return View(model);
+            }
+            _articleCategoryService.Update(Id, model);
+            TempData["Message"] = "Update successfully";
+            return RedirectToAction("Edit", new { Id = Id });
+        }
+        model = _initArticleCategoryViewModel(model, Id);
+        return View(model);
+    }
+
+    [HttpGet]
+    public IActionResult Delete(Guid Id)
+    {
+        var article = _articleCategoryService.GetById(Id);
+        if (article == null)
+        {
+            return NotFound();
+        }
+        _articleCategoryService.Delete(article);
+        TempData["Message"] = "Delete successfully";
+        return RedirectToAction("Index");
+    }
+
+    private ArticleCategoryViewModel _initArticleCategoryViewModel(ArticleCategoryViewModel model, Guid? excludeId = null)
+    {
+        var articleCategories = _articleCategoryService.GetAll();
+        var parentList = new List<SelectListItem>();
+
+        foreach (var item in articleCategories)
+        {
+            if (excludeId != null && item.Id == excludeId)
+            {
+                continue;
+            }
+            parentList.Add(new SelectListItem()
+            {
+                Text = item.Name,
+                Value = item.Id.ToString()
+            });
+        }
+        model.ParentList = parentList;
+        return model;
     }
 }
