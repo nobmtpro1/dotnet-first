@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Blog.Areas.Admin.Controllers;
 
 [Authorize(Roles = Const.ROLE_ADMIN)]
+[Area("Admin")]
 public class ArticleCategoryController : Controller
 {
     private readonly ILogger<ArticleCategoryController> _logger;

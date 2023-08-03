@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Blog.Models;
 using Microsoft.Extensions.Logging;
 
-namespace Blog.Controllers;
+namespace Blog.Areas.Front.Controllers;
 
+[Area("Front")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

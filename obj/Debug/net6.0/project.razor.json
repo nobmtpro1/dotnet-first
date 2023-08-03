@@ -18374,23 +18374,18 @@
   "RootNamespace": "Blog",
   "Documents": [
     {
-      "FilePath": "d:\\.net\\Blog\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\.net\\Blog\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\.net\\Blog\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\.net\\Blog\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Article\\Index.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Article\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18409,6 +18404,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\.net\\Blog\\Areas\\Admin\\Views\\_ViewStart.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -18419,23 +18419,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\.net\\Blog\\Views\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\.net\\Blog\\Areas\\Admin\\Views\\Shared\\_SidebarPartial.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Shared\\_SidebarPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\.net\\Blog\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\.net\\Blog\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Shared\\_PaginationPartial.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Shared\\_PaginationPartial.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18449,13 +18439,23 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\.net\\Blog\\Views\\Account\\Login.cshtml",
-      "TargetPath": "Views\\Account\\Login.cshtml",
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\.net\\Blog\\Views\\Account\\AccessDenied.cshtml",
-      "TargetPath": "Views\\Account\\AccessDenied.cshtml",
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Account\\AccessDenied.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Account\\AccessDenied.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Account\\Login.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Account\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18464,8 +18464,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\.net\\Blog\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\.net\\Blog\\Areas\\Front\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Areas\\Front\\Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {

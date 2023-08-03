@@ -8,9 +8,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Text.Encodings.Web;
-using Blog.ViewModels.Account;
 
-namespace Blog.Controllers
+namespace Blog.Areas.Front.Controllers
 {
     public class BaseController : Controller
     {

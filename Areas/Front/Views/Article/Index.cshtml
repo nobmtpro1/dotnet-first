@@ -1,0 +1,45 @@
+@model Blog.Ultils.PaginatedList<Blog.Models.ArticleModel>
+@using System.Text.RegularExpressions;
+@{
+  ViewData["Title"] = "Article Page";
+}
+
+<div class="text-center">
+  <h1 class="display-4">Article</h1>
+</div>
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-5 mb-5 p-2">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+            @foreach (var item in Model)
+        {
+          string description = Regex.Replace(item.Content!, "<.*?>", String.Empty);
+          if(item.Content!.Length > 30)
+          {
+              description =description!.Substring(0,30);
+          }
+         
+            <div class="col-md-3 p-3">
+              <div class="card">
+                <img class="card-img-top" src='@ViewData["imagePath"]/@item.Image' alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">@item.Title</h5>
+                  <p class="card-text">@description</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+        }
+  </div>
+<partial name="_PaginationPartial" model="@Model"/>
+
+</div>
+

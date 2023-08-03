@@ -19,6 +19,7 @@ using System.Data.SqlClient;
 namespace Blog.Areas.Admin.Controllers;
 
 [Authorize(Roles = Const.ROLE_ADMIN)]
+[Area("Admin")]
 public class ArticleController : Controller
 {
     private readonly ILogger<ArticleController> _logger;

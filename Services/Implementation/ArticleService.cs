@@ -11,6 +11,7 @@ using Blog.Models;
 using Blog.Ultils;
 using Microsoft.AspNetCore.Hosting;
 using Blog;
+using System.Threading.Tasks;
 
 namespace Blog.Services.Implementation
 {
@@ -120,6 +121,13 @@ namespace Blog.Services.Implementation
         {
             var isExist = _unitOfWork.ArticleRepository.GetAll().Where(x => x.Slug == slug).Any();
             return isExist;
+        }
+
+        public async Task<PaginatedList<ArticleModel>> Search(int pageIndex)
+        {
+            var articles = _unitOfWork.ArticleRepository.GetAll().OrderByDescending(x => x.CreatedAt);
+            PaginatedList<ArticleModel> articlesPaginatedList = await PaginatedList<ArticleModel>.CreateAsync(articles, pageIndex, 2);
+            return articlesPaginatedList;
         }
     }
 }

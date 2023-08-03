@@ -8,11 +8,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Text.Encodings.Web;
-using Blog.ViewModels.Account;
 using Microsoft.Extensions.Logging;
+using Blog.Areas.Front.ViewModels.Account;
 
-namespace Blog.Controllers;
 
+namespace Blog.Areas.Front.Controllers;
+
+[Area("Front")]
 public class AccountController : BaseController
 {
     protected UserManager<UserModel> _userManager;

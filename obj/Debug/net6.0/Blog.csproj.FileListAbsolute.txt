@@ -311,7 +311,6 @@ D:\.net\Blog\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.
 D:\.net\Blog\obj\Debug\net6.0\Blog.MvcApplicationPartsAssemblyInfo.cs
 D:\.net\Blog\obj\Debug\net6.0\staticwebassets.build.json
 D:\.net\Blog\obj\Debug\net6.0\staticwebassets.development.json
-D:\.net\Blog\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\.net\Blog\obj\Debug\net6.0\scopedcss\bundle\Blog.styles.css
 D:\.net\Blog\obj\Debug\net6.0\scopedcss\projectbundle\Blog.bundle.scp.css
 D:\.net\Blog\obj\Debug\net6.0\Blog.csproj.CopyComplete
@@ -335,3 +334,19 @@ D:\.net\Blog\bin\Debug\net6.0\package-lock.json
 D:\.net\Blog\bin\Debug\net6.0\package.json
 D:\.net\Blog\bin\Debug\net6.0\Castle.Core.dll
 D:\.net\Blog\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\.net\Blog\obj\Debug\net6.0\scopedcss\Areas\Front\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\.net\Blog\bin\Debug\net6.0\AspNetCore.RouteAnalyzer.dll
+D:\.net\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\.net\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\.net\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+D:\.net\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+D:\.net\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.dll
+D:\.net\Blog\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\.net\Blog\bin\Debug\net6.0\runtimes\linux-arm\native\libuv.so
+D:\.net\Blog\bin\Debug\net6.0\runtimes\linux-arm64\native\libuv.so
+D:\.net\Blog\bin\Debug\net6.0\runtimes\linux-armel\native\libuv.so
+D:\.net\Blog\bin\Debug\net6.0\runtimes\linux-x64\native\libuv.so
+D:\.net\Blog\bin\Debug\net6.0\runtimes\osx\native\libuv.dylib
+D:\.net\Blog\bin\Debug\net6.0\runtimes\win-arm\native\libuv.dll
+D:\.net\Blog\bin\Debug\net6.0\runtimes\win-x64\native\libuv.dll
+D:\.net\Blog\bin\Debug\net6.0\runtimes\win-x86\native\libuv.dll

@@ -1,0 +1,24 @@
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : ""; var nextDisabled
+        = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a
+  asp-action="Index"
+  asp-route-page="@(Model.PageIndex - 1)"
+  class="btn btn-default @prevDisabled"
+>
+  Previous
+</a>
+
+@for (int i = 1; i <= Model.TotalPages; i++)
+{
+    <a asp-action="Index" asp-route-page="@i" class="btn btn-default"> @i </a>
+}
+<a
+  asp-action="Index"
+  asp-route-page="@(Model.PageIndex + 1)"
+  class="btn btn-default @nextDisabled"
+>
+  Next
+</a>
