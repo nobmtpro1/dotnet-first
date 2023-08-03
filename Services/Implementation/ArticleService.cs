@@ -123,11 +123,22 @@ namespace Blog.Services.Implementation
             return isExist;
         }
 
-        public async Task<PaginatedList<ArticleModel>> Search(int pageIndex)
+        public async Task<PaginatedList<ArticleModel>> Search(int pageIndex, string? category)
         {
-            var articles = _unitOfWork.ArticleRepository.GetAll().OrderByDescending(x => x.CreatedAt);
+            var articles = _unitOfWork.ArticleRepository.GetAll();
+            if (!String.IsNullOrEmpty(category))
+            {
+                articles = articles.Where(s => s.ArticleCategories.Where(x => x.Slug == category).Any());
+            }
+            articles = articles.OrderByDescending(x => x.CreatedAt);
             PaginatedList<ArticleModel> articlesPaginatedList = await PaginatedList<ArticleModel>.CreateAsync(articles, pageIndex, 2);
             return articlesPaginatedList;
+        }
+
+        public ArticleModel GetBySlug(string slug)
+        {
+            var article = _unitOfWork.ArticleRepository.GetAll().Where(x => x.Slug == slug).FirstOrDefault();
+            return article!;
         }
     }
 }

@@ -12,9 +12,12 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light mt-5 mb-5 p-2">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
-        </li>
+        @foreach (var item in (List<ArticleCategoryModel>) ViewData["articleCategories"]!)
+        {
+          <li class="nav-item active">
+            <a class="nav-link" asp-action="Category" asp-route-slug="@item.Slug">@item.Name</a>
+          </li>
+        }
       </ul>
     </div>
   </nav>
@@ -33,7 +36,7 @@
                 <div class="card-body">
                   <h5 class="card-title">@item.Title</h5>
                   <p class="card-text">@description</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a asp-action="Detail" asp-route-slug="@item.Slug" class="btn btn-primary">Detail</a>
                 </div>
               </div>
             </div>

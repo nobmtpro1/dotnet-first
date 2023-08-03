@@ -1,0 +1,12 @@
+@model Blog.Models.ArticleModel
+@{
+  ViewData["Title"] = Model.Title;
+}
+
+<div class="text-center">
+  <h1 class="display-4">@Model.Title</h1>
+</div>
+
+<div class="container">
+    @Html.Raw(Model.Content)
+</div>

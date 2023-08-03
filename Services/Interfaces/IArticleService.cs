@@ -16,7 +16,7 @@ namespace Blog.Services.Interfaces
         public ArticleModel Update(Guid Id, ArticleViewModel model);
         public ArticleModel Delete(ArticleModel article);
         public bool CheckSlugExist(string slug);
-        public Task<PaginatedList<ArticleModel>> Search(int pageIndex);
-
+        public Task<PaginatedList<ArticleModel>> Search(int pageIndex, string slug);
+        public ArticleModel GetBySlug(string slug);
     }
 }
