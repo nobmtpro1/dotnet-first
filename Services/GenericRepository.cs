@@ -21,8 +21,8 @@ namespace Blog.Services
         }
 
         public virtual IEnumerable<TEntity> Get(
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+            Expression<Func<TEntity, bool>> filter = null!,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null!,
             string includeProperties = "")
         {
             IQueryable<TEntity> query = dbSet;
@@ -50,7 +50,7 @@ namespace Blog.Services
 
         public virtual TEntity GetByID(object id)
         {
-            return dbSet.Find(id);
+            return dbSet.Find(id!)!;
         }
 
         public virtual void Insert(TEntity entity)
@@ -60,8 +60,8 @@ namespace Blog.Services
 
         public virtual void Delete(object id)
         {
-            TEntity entityToDelete = dbSet.Find(id);
-            Delete(entityToDelete);
+            TEntity entityToDelete = dbSet.Find(id!)!;
+            Delete(entityToDelete!);
         }
 
         public virtual void Delete(TEntity entityToDelete)

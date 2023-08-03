@@ -25,7 +25,7 @@ namespace Blog.Services.Repository
 
         public ArticleModel GetArticleByID(int id)
         {
-            return context.Article.Find(id);
+            return context.Article.Find(id)!;
         }
 
         public void InsertArticle(ArticleModel article)
@@ -35,8 +35,8 @@ namespace Blog.Services.Repository
 
         public void DeleteArticle(int articleID)
         {
-            ArticleModel article = context.Article.Find(articleID);
-            context.Article.Remove(article);
+            ArticleModel article = context.Article.Find(articleID!)!;
+            context.Article.Remove(article!);
         }
 
         public void UpdateArticle(ArticleModel article)

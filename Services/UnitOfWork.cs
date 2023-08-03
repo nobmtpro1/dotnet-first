@@ -7,11 +7,11 @@ namespace Blog.Services
     public class UnitOfWork : IDisposable
     {
         private ApplicationDbContext context = default!;
-        private GenericRepository<ArticleModel> articleRepository;
-        private GenericRepository<ArticleCategoryModel> articleCategoryRepository;
+        private GenericRepository<ArticleModel> articleRepository = default!;
+        private GenericRepository<ArticleCategoryModel> articleCategoryRepository = default!;
 
         public UnitOfWork(ApplicationDbContext _context){
-            context  = _context;
+            context  = _context!;
         }
 
         public GenericRepository<ArticleModel> ArticleRepository

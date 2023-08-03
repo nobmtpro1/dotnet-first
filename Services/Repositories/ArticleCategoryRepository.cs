@@ -25,7 +25,7 @@ namespace Blog.Services.Repository
 
         public ArticleCategoryModel GetArticleCategoryByID(int id)
         {
-            return context.ArticleCategory.Find(id);
+            return context.ArticleCategory.Find(id!)!;
         }
 
         public void InsertArticleCategory(ArticleCategoryModel articleCategory)
@@ -35,8 +35,8 @@ namespace Blog.Services.Repository
 
         public void DeleteArticleCategory(int articleCategoryID)
         {
-            ArticleCategoryModel articleCategory = context.ArticleCategory.Find(articleCategoryID);
-            context.ArticleCategory.Remove(articleCategory);
+            ArticleCategoryModel articleCategory = context.ArticleCategory.Find(articleCategoryID!)!;
+            context.ArticleCategory.Remove(articleCategory!);
         }
 
         public void UpdateArticleCategory(ArticleCategoryModel articleCategory)
