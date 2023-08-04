@@ -4,7 +4,7 @@ using Blog.Models;
 
 namespace Blog.Services.Interfaces
 {
-    public interface IArticleRepository : IDisposable
+    public interface IArticleRepository : IBaseRepository<ArticleModel>
     {
 
     }

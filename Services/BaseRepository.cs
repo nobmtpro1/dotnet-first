@@ -6,18 +6,24 @@ using Blog.Models;
 using System.Linq.Expressions;
 using Blog.Data;
 using Microsoft.EntityFrameworkCore;
+using Blog.Services.Interfaces;
 
 namespace Blog.Services
 {
-    public class GenericRepository<TEntity> where TEntity : class
+    public class BaseRepository<TEntity> where TEntity : class
     {
         internal ApplicationDbContext context;
         internal DbSet<TEntity> dbSet;
 
-        public GenericRepository(ApplicationDbContext context)
+        public BaseRepository(ApplicationDbContext context)
         {
             this.context = context;
-            this.dbSet = context.Set<TEntity>();
+            dbSet = context.Set<TEntity>();
+        }
+
+        public virtual void Save()
+        {
+            context.SaveChanges();
         }
 
         public virtual IEnumerable<TEntity> Get(

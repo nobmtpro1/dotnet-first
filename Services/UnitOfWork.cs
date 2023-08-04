@@ -5,44 +5,40 @@ using Blog.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using Castle.Core.Configuration;
+using Blog.Services.Repository;
 
 namespace Blog.Services
 {
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
-        private ApplicationDbContext context = default!;
-        private GenericRepository<ArticleModel> articleRepository = default!;
-        private GenericRepository<ArticleCategoryModel> articleCategoryRepository = default!;
+        private readonly ApplicationDbContext context = default!;
+        private IArticleRepository articleRepository = default!;
+        private IArticleCategoryRepository articleCategoryRepository = default!;
 
         public UnitOfWork(ApplicationDbContext _context)
         {
             context = _context;
-            // context = new ApplicationDbContext(options.Options);
-            //     var contextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
-            //  .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Mentoring.Data;Trusted_Connection=True;MultipleActiveResultSets=true")
-            //  .Options;
-            //     context = new ApplicationDbContext(contextOptions);
         }
 
-        public GenericRepository<ArticleModel> ArticleRepository
+        public IArticleRepository ArticleRepository
         {
             get
             {
                 if (articleRepository == null)
                 {
-                    articleRepository = new GenericRepository<ArticleModel>(context);
+                    articleRepository = new ArticleRepository(context);
                 }
                 return articleRepository;
             }
         }
 
-        public GenericRepository<ArticleCategoryModel> ArticleCategoryRepository
+        public IArticleCategoryRepository ArticleCategoryRepository
         {
             get
             {
                 if (articleCategoryRepository == null)
                 {
-                    articleCategoryRepository = new GenericRepository<ArticleCategoryModel>(context);
+                    articleCategoryRepository = new ArticleCategoryRepository(context);
                 }
                 return articleCategoryRepository;
             }

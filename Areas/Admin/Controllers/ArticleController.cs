@@ -36,12 +36,8 @@ public class ArticleController : Controller
 
     public IActionResult Index()
     {
-        ArticleListViewModel model = new ArticleListViewModel();
-        // var articles = _articleService.GetAll();
-        // model.Articles = articles;
-        // return View(model);
+        ArticleListViewModel model = new();
         var articles = _unitOfWork.ArticleRepository.Get();
-        Helper.Dump(articles);
         var articlesList = new List<ArticleViewModel>();
         foreach (var article in articles)
         {
