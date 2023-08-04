@@ -33,9 +33,11 @@ public class ArticleController : Controller
             articles = articles.Where(s => s.ArticleCategories.Where(x => x.Slug == category).Any());
         }
         articles = articles.OrderByDescending(x => x.CreatedAt);
-        var articlesPaginatedList = await PaginatedList<ArticleModel>.CreateAsync(articles, page ?? 1, 2);
+        var articlesPaginatedList = await PaginatedList<ArticleModel>.CreateAsync(articles, page ?? 1, 12);
         var articleCategories = _unitOfWork.ArticleCategoryRepository.Get(orderBy: q => q.OrderBy(d => d.CreatedAt));
+        var articleCategory =  _unitOfWork.ArticleCategoryRepository.Get(filter: x => x.Slug == category).FirstOrDefault();
         ViewData["articleCategories"] = articleCategories;
+        ViewData["articleCategory"] = articleCategory;
         return View(articlesPaginatedList);
     }
 

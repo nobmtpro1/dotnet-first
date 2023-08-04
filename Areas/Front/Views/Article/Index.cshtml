@@ -2,6 +2,7 @@
 @using System.Text.RegularExpressions;
 @{
   ViewData["Title"] = "Article Page";
+  ArticleCategoryModel? articleCategory = (ArticleCategoryModel)ViewData["articleCategory"]!;
 }
 
 <div class="text-center">
@@ -12,37 +13,44 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light mt-5 mb-5 p-2">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        @foreach (var item in (List<ArticleCategoryModel>) ViewData["articleCategories"]!)
+        <li class='nav-item'>
+          <a class='nav-link @if(articleCategory == null){
+          @Html.Raw("active")
+}' asp-action="Index" asp-route-category="">All</a>
+        </li>
+        @foreach (var item in (List<ArticleCategoryModel>)ViewData["articleCategories"]!)
         {
-          <li class="nav-item active">
-            <a class="nav-link" asp-action="Index" asp-route-category="@item.Slug">@item.Name</a>
+          <li class="nav-item ">
+            <a class='nav-link @if(articleCategory != null && articleCategory!.Slug == item.Slug){
+          @Html.Raw("active")
+}' asp-action="Index" asp-route-category="@item.Slug">@item.Name</a>
           </li>
         }
       </ul>
     </div>
   </nav>
   <div class="row">
-            @foreach (var item in Model)
-        {
-          string description = Regex.Replace(item.Content!, "<.*?>", String.Empty);
-          if(item.Content!.Length > 30)
-          {
-              description =description!.Substring(0,30);
-          }
-         
-            <div class="col-md-3 p-3">
-              <div class="card">
-                <img class="card-img-top" src='@item.Image' alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">@item.Title</h5>
-                  <p class="card-text">@description</p>
-                  <a asp-action="Detail" asp-route-slug="@item.Slug" class="btn btn-primary">Detail</a>
-                </div>
-              </div>
-            </div>
-        }
+    @foreach (var item in Model)
+    {
+      string description = Regex.Replace(item.Content!, "<.*?>", String.Empty);
+      if (item.Content!.Length > 30)
+      {
+        description = description!.Substring(0, 30);
+      }
+
+      <div class="col-md-3 p-3">
+        <div class="card">
+          <img class="card-img-top" src='@item.Image' alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">@item.Title</h5>
+            <p class="card-text">@description</p>
+            <a asp-action="Detail" asp-route-slug="@item.Slug" class="btn btn-primary">Detail</a>
+          </div>
+        </div>
+      </div>
+    }
   </div>
-<partial name="_PaginationPartial" model="@Model"/>
+  <partial name="_PaginationPartial" model="@Model" />
 
 </div>
 

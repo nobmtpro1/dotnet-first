@@ -58,7 +58,7 @@ public static class Helper
         return $"{Request.Scheme}://{Request.Host}{Request.PathBase}/";
     }
 
-    public static string GenerateSlug(this string phrase)
+    public static string GenerateSlug(string phrase)
     {
         string str = phrase.RemoveAccent().ToLower();
         // invalid chars           
