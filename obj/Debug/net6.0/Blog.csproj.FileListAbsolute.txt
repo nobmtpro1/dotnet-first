@@ -350,3 +350,9 @@ D:\.net\Blog\obj\Debug\net6.0\refint\Blog.dll
 D:\.net\Blog\obj\Debug\net6.0\Blog.pdb
 D:\.net\Blog\obj\Debug\net6.0\Blog.genruntimeconfig.cache
 D:\.net\Blog\obj\Debug\net6.0\ref\Blog.dll
+D:\.net\Blog\bin\Debug\net6.0\CommunityToolkit.HighPerformance.dll
+D:\.net\Blog\bin\Debug\net6.0\Minio.dll
+D:\.net\Blog\bin\Debug\net6.0\System.IO.Hashing.dll
+D:\.net\Blog\bin\Debug\net6.0\System.Reactive.dll
+D:\.net\Blog\bin\Debug\net6.0\System.Reactive.Linq.dll
+D:\.net\Blog\bin\Debug\net6.0\MimeTypes.dll

@@ -1,9 +1,13 @@
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
+using Blog.Services.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Blog;
+using Microsoft.Extensions.Configuration;
+using MimeTypes;
 
 namespace Blog.Ultils;
 public static class Helper
@@ -17,7 +21,7 @@ public static class Helper
         })); // your logger
     }
 
-    public static string UploadFile(IFormFile file, string WebRootPath, string uploadDirectory)
+    public static string UploadFile(IFormFile file, string WebRootPath, string uploadDirectory, IConfiguration configuration)
     {
         var uploadPath = Path.Combine(WebRootPath, uploadDirectory);
 
@@ -31,7 +35,22 @@ public static class Helper
         {
             file.CopyTo(strem);
         }
-        return fileName;
+        return configuration.GetSection("PublicUrl").Value! + "/" + fileName;
+    }
+
+    public static string UploadFileCloud(IFormFile file, IStorage storage, IConfiguration configuration)
+    {
+        var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+        var bucketName = Const.PUBLIC_BUCKET;
+
+        using (var ms = new MemoryStream())
+        {
+            file.CopyToAsync(ms).Wait();
+            ms.Seek(0, SeekOrigin.Begin);
+            storage.Upload(bucketName, ms, fileName, MimeTypeMap.GetMimeType(Path.GetExtension(file.FileName))).Wait();
+        }
+        var defaultStorage = configuration.GetSection("Storage").Value;
+        return configuration.GetSection(defaultStorage!)["EndpointScheme"] + configuration.GetSection(defaultStorage!)["Endpoint"]! + "/" + Const.PUBLIC_BUCKET + "/" + fileName;
     }
 
     public static string BaseUrl(HttpRequest Request)

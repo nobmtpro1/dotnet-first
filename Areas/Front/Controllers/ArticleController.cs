@@ -35,7 +35,6 @@ public class ArticleController : Controller
         articles = articles.OrderByDescending(x => x.CreatedAt);
         var articlesPaginatedList = await PaginatedList<ArticleModel>.CreateAsync(articles, page ?? 1, 2);
         var articleCategories = _unitOfWork.ArticleCategoryRepository.Get(orderBy: q => q.OrderBy(d => d.CreatedAt));
-        ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
         ViewData["articleCategories"] = articleCategories;
         return View(articlesPaginatedList);
     }
@@ -48,7 +47,6 @@ public class ArticleController : Controller
         {
             return NotFound();
         }
-        ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
         return View(article);
     }
 }

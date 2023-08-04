@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Hosting;
 using System.Data.SqlClient;
 using Blog.Services;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace Blog.Areas.Admin.Controllers;
 
@@ -27,12 +28,16 @@ public class ArticleController : Controller
     private readonly ILogger<ArticleController> _logger;
     private readonly IWebHostEnvironment _hostingEnv;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IStorage _storage;
+    private readonly IConfiguration _config;
 
-    public ArticleController(ILogger<ArticleController> logger, IWebHostEnvironment hostingEnv, IUnitOfWork unitOfWork)
+    public ArticleController(ILogger<ArticleController> logger, IWebHostEnvironment hostingEnv, IUnitOfWork unitOfWork, IStorage storage, IConfiguration config)
     {
         _logger = logger;
         _hostingEnv = hostingEnv;
         _unitOfWork = unitOfWork;
+        _storage = storage;
+        _config = config;
     }
 
     public IActionResult Index()
@@ -96,7 +101,8 @@ public class ArticleController : Controller
 
             if (model.ImageFile != null)
             {
-                var fileName = Helper.UploadFile(model.ImageFile, _hostingEnv.WebRootPath, Const.UPLOAD_IMAGE_DIR);
+                // var fileName = Helper.UploadFile(model.ImageFile, _hostingEnv.WebRootPath, Const.UPLOAD_IMAGE_DIR);
+                var fileName = Helper.UploadFileCloud(model.ImageFile, _storage, _config);
                 article.Image = fileName;
             }
 
@@ -131,7 +137,6 @@ public class ArticleController : Controller
 
         model = InitArticleViewModel(model, article);
         // Dumper.Dump(model);
-        ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
         return View(model);
     }
 
@@ -171,7 +176,7 @@ public class ArticleController : Controller
             }
             if (model.ImageFile != null)
             {
-                var fileName = Helper.UploadFile(model.ImageFile, _hostingEnv.WebRootPath, Const.UPLOAD_IMAGE_DIR);
+                var fileName = Helper.UploadFileCloud(model.ImageFile, _storage, _config);
                 article.Image = fileName;
             }
 

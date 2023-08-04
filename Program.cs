@@ -54,7 +54,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 });
 
-builder.Services.AddServiceCollection();
+builder.Services.AddServiceCollection(configuration: builder.Configuration);
 
 try
 {

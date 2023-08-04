@@ -38,6 +38,6 @@ namespace Blog
 
         public const string UPLOAD_DIR = "uploads";
         public const string UPLOAD_IMAGE_DIR = UPLOAD_DIR + "/images";
-
+        public const string PUBLIC_BUCKET = "public";
     }
 }
