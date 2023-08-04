@@ -6,6 +6,7 @@ using Blog.Models;
 using Blog.Services.Interfaces;
 using Blog.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Blog.Services.Repository
 {
@@ -13,6 +14,12 @@ namespace Blog.Services.Repository
     {
         public ArticleCategoryRepository(ApplicationDbContext context) : base(context)
         {
+        }
+
+        public IEnumerable<SelectListItem> ToSelectListItems()
+        {
+            var selectListItems = dbSet.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name });
+            return selectListItems;
         }
     }
 }

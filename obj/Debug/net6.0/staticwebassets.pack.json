@@ -7953,6 +7953,14 @@
       "PackagePath": "staticwebassets\\tinymce\\tinymce.min.js"
     },
     {
+      "Id": "D:\\.net\\Blog\\wwwroot\\uploads\\images\\016edca6-94ee-443c-9aa1-1b9e478b26d7.png",
+      "PackagePath": "staticwebassets\\uploads\\images\\016edca6-94ee-443c-9aa1-1b9e478b26d7.png"
+    },
+    {
+      "Id": "D:\\.net\\Blog\\wwwroot\\uploads\\images\\02c67974-e68a-451f-bc30-3f37f6b03da2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\02c67974-e68a-451f-bc30-3f37f6b03da2.jpg"
+    },
+    {
       "Id": "D:\\.net\\Blog\\wwwroot\\uploads\\images\\0d91775b-a111-48be-9d77-79905bdb57c4.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\0d91775b-a111-48be-9d77-79905bdb57c4.jpg"
     },

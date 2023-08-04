@@ -18,12 +18,12 @@ namespace Blog.Services.Interfaces
 
         public TEntity GetByID(object id);
 
-        public void Insert(TEntity entity);
+        public TEntity Insert(TEntity entity);
 
-        public void Delete(object id);
+        public TEntity Delete(object id);
 
-        public void Delete(TEntity entityToDelete);
+        public TEntity Delete(TEntity entityToDelete);
 
-        public void Update(TEntity entityToUpdate);
+        public TEntity Update(TEntity entityToUpdate);
     }
 }
