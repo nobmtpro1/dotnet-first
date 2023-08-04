@@ -8,6 +8,7 @@ namespace Blog.Services.Interfaces
     public interface IArticleCategoryRepository : IBaseRepository<ArticleCategoryModel>
     {
         public IEnumerable<SelectListItem> ToSelectListItems();
+        public bool CheckSlugExist(string slug);
 
     }
 }

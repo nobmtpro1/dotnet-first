@@ -21,5 +21,11 @@ namespace Blog.Services.Repository
             var selectListItems = dbSet.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name });
             return selectListItems;
         }
+
+        public bool CheckSlugExist(string slug)
+        {
+            var isExist = dbSet.Where(x => x.Slug == slug).Any();
+            return isExist;
+        }
     }
 }
