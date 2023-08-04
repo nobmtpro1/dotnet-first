@@ -5,6 +5,9 @@ using Microsoft.Extensions.Logging;
 using Blog.Services.Interfaces;
 using Blog.Ultils;
 using System.Threading.Tasks;
+using System.Linq;
+using System;
+using System.Linq.Expressions;
 
 namespace Blog.Areas.Front.Controllers;
 
@@ -12,42 +15,40 @@ namespace Blog.Areas.Front.Controllers;
 public class ArticleController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public ArticleController(ILogger<HomeController> logger)
+
+    public ArticleController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
     {
         _logger = logger;
+        _unitOfWork = unitOfWork;
     }
 
-    [Route("/articles")]
-    public  IActionResult Index(int? page)
+    [Route("/articles/{category?}")]
+    public async Task<IActionResult> Index(int? page, string? category)
     {
-        // var articles = await _articleService.Search(page ?? 1, null!);
-        // var articleCategories = _articleCategoryService.GetAll();
-        // ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
-        // ViewData["articleCategories"] = articleCategories;
-        // return View(articles);
-        return View();
+        var articles = _unitOfWork.ArticleRepository.DbSet();
+        if (!string.IsNullOrEmpty(category))
+        {
+            articles = articles.Where(s => s.ArticleCategories.Where(x => x.Slug == category).Any());
+        }
+        articles = articles.OrderByDescending(x => x.CreatedAt);
+        var articlesPaginatedList = await PaginatedList<ArticleModel>.CreateAsync(articles, page ?? 1, 2);
+        var articleCategories = _unitOfWork.ArticleCategoryRepository.Get(orderBy: q => q.OrderBy(d => d.CreatedAt));
+        ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
+        ViewData["articleCategories"] = articleCategories;
+        return View(articlesPaginatedList);
     }
 
-    // [Route("/article/category/{slug}")]
-    // public async Task<IActionResult> Category(string slug, int? page)
-    // {
-    //     var articles = await _articleService.Search(page ?? 1, slug);
-    //     var articleCategories = _articleCategoryService.GetAll();
-    //     ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
-    //     ViewData["articleCategories"] = articleCategories;
-    //     return View("Index", articles);
-    // }
-
-    // [Route("/article/{slug}")]
-    // public IActionResult Detail(string slug)
-    // {
-    //     var article = _articleService.GetBySlug(slug);
-    //     if (article == null)
-    //     {
-    //         return NotFound();
-    //     }
-    //     ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
-    //     return View(article);
-    // }
+    [Route("/article/{slug}")]
+    public IActionResult Detail(string slug)
+    {
+        var article = _unitOfWork.ArticleRepository.GetBySlug(slug);
+        if (article == null)
+        {
+            return NotFound();
+        }
+        ViewData["imagePath"] = Helper.BaseUrl(Request) + Const.UPLOAD_IMAGE_DIR;
+        return View(article);
+    }
 }

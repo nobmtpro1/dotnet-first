@@ -11,6 +11,9 @@ namespace Blog.Services.Interfaces
 {
     public interface IBaseRepository<TEntity> where TEntity : class
     {
+
+        public IQueryable<TEntity> DbSet();
+
         public IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null!,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null!,

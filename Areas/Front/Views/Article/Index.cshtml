@@ -1,4 +1,4 @@
-@* @model Blog.Ultils.PaginatedList<Blog.Models.ArticleModel>
+@model Blog.Ultils.PaginatedList<Blog.Models.ArticleModel>
 @using System.Text.RegularExpressions;
 @{
   ViewData["Title"] = "Article Page";
@@ -15,7 +15,7 @@
         @foreach (var item in (List<ArticleCategoryModel>) ViewData["articleCategories"]!)
         {
           <li class="nav-item active">
-            <a class="nav-link" asp-action="Category" asp-route-slug="@item.Slug">@item.Name</a>
+            <a class="nav-link" asp-action="Index" asp-route-category="@item.Slug">@item.Name</a>
           </li>
         }
       </ul>
@@ -45,5 +45,4 @@
 <partial name="_PaginationPartial" model="@Model"/>
 
 </div>
- *@
-abc
+

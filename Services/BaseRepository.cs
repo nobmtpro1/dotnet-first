@@ -21,6 +21,11 @@ namespace Blog.Services
             dbSet = context.Set<TEntity>();
         }
 
+        public virtual IQueryable<TEntity> DbSet()
+        {
+            return dbSet;
+        }
+
         public virtual void Save()
         {
             context.SaveChanges();

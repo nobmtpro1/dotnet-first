@@ -9,5 +9,6 @@ namespace Blog.Services.Interfaces
     public interface IArticleRepository : IBaseRepository<ArticleModel>
     {
         public bool CheckSlugExist(string slug);
+        public ArticleModel? GetBySlug(string slug);
     }
 }

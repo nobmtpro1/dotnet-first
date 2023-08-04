@@ -24,5 +24,11 @@ namespace Blog.Services.Repository
             var isExist = dbSet.Where(x => x.Slug == slug).Any();
             return isExist;
         }
+
+        public ArticleModel? GetBySlug(string slug)
+        {
+            var article = dbSet.Where(x => x.Slug == slug).FirstOrDefault();
+            return article;
+        }
     }
 }
