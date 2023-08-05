@@ -30,6 +30,30 @@
     </div>
   </nav>
   <div class="row">
+    <div class="col-md-3 ms-auto">
+      <form action="" method="get">
+        @foreach (var key in Context.Request.Query.Keys)
+        {
+          if (key != "year" && key != "page")
+          {
+            <input type="hidden" name="@key" value="@Context.Request.Query[key]">
+          }
+        }
+        <input type="hidden" name="page" value="1">
+        <select name="year" class="form-control" onchange="this.form.submit()">
+          <!option value="">All</!option>
+          @foreach (var item in (List<int>)ViewData["distinctYears"]!)
+          {
+            <!option @if ((string)Context.Request.Query["year"]! == item.ToString())
+            {
+              @Html.Raw("selected")
+            } value="@item">@item</!option>
+          }
+        </select>
+      </form>
+    </div>
+  </div>
+  <div class="row">
     @foreach (var item in Model)
     {
       string description = Regex.Replace(item.Content!, "<.*?>", String.Empty);
@@ -42,6 +66,7 @@
         <div class="card">
           <img class="card-img-top" src='@item.Image' alt="Card image cap">
           <div class="card-body">
+            <p class="card-text">@item.CreatedAt</p>
             <h5 class="card-title">@item.Title</h5>
             <p class="card-text">@description</p>
             <a asp-action="Detail" asp-route-slug="@item.Slug" class="btn btn-primary">Detail</a>

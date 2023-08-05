@@ -74,18 +74,6 @@ namespace Blog.Data
 
             }
 
-
-            if (!context.ArticleCategory.Any(x => x.Name == "ABC"))
-            {
-                var articleCategory = new ArticleCategoryModel()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "ABC",
-                    Slug = "ABC".ToUpper(),
-                };
-                context.ArticleCategory.Add(articleCategory);
-            }
-
             context.SaveChanges();
         }
     }

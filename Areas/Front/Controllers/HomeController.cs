@@ -99,12 +99,14 @@ public class HomeController : Controller
             foreach (var item in (dynamic)data!)
             {
                 var slug = Helper.GenerateSlug((string)item.title);
+                Helper.Dump(slug);
+                Helper.Dump(_unitOfWork.ArticleRepository.CheckSlugExist(slug));
                 if (_unitOfWork.ArticleRepository.CheckSlugExist(slug))
                 {
+                    Helper.Dump(slug);
                     continue;
                 }
-
-                try
+                else
                 {
                     var article = new ArticleModel()
                     {
@@ -113,19 +115,18 @@ public class HomeController : Controller
                         Content = item.content,
                         Image = item.image,
                         Slug = slug,
+
                     };
                     Random rnd = new Random();
                     int r = rnd.Next(allSrticleCategories.Count);
                     article.ArticleCategories.Add(allSrticleCategories[r]);
                     _unitOfWork.ArticleRepository.Insert(article);
+                    _unitOfWork.Save();
+                    article.CreatedAt = item.created_at;
+                    _unitOfWork.ArticleRepository.Update(article);
+                    _unitOfWork.Save();
                 }
-                catch (Exception)
-                {
-                    throw;
-                }
-
             }
-            _unitOfWork.Save();
         }
         return Ok(data);
     }

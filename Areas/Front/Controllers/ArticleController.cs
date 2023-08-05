@@ -25,20 +25,16 @@ public class ArticleController : Controller
     }
 
     [Route("/articles/{category?}")]
-    public async Task<IActionResult> Index(int? page, string? category)
+    public async Task<IActionResult> Index(int? page, string? category, int? year)
     {
-        var articles = _unitOfWork.ArticleRepository.DbSet();
-        if (!string.IsNullOrEmpty(category))
-        {
-            articles = articles.Where(s => s.ArticleCategories.Where(x => x.Slug == category).Any());
-        }
-        articles = articles.OrderByDescending(x => x.CreatedAt);
-        var articlesPaginatedList = await PaginatedList<ArticleModel>.CreateAsync(articles, page ?? 1, 12);
+        var articles = await _unitOfWork.ArticleRepository.Search(page, category, year);
         var articleCategories = _unitOfWork.ArticleCategoryRepository.Get(orderBy: q => q.OrderBy(d => d.CreatedAt));
-        var articleCategory =  _unitOfWork.ArticleCategoryRepository.Get(filter: x => x.Slug == category).FirstOrDefault();
+        var articleCategory = _unitOfWork.ArticleCategoryRepository.Get(filter: x => x.Slug == category).FirstOrDefault();
+        var distinctYears = _unitOfWork.ArticleRepository.SelectDistinctYear();
         ViewData["articleCategories"] = articleCategories;
         ViewData["articleCategory"] = articleCategory;
-        return View(articlesPaginatedList);
+        ViewData["distinctYears"] = distinctYears;
+        return View(articles);
     }
 
     [Route("/article/{slug}")]
