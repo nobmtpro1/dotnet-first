@@ -1,0 +1,57 @@
+@model Blog.Areas.Admin.ViewModels.ProductCategory.ProductCategoryListViewModel
+<div class="card">
+
+  <div class="card-body">
+      @if (!String.IsNullOrEmpty((string)TempData["message"]!))
+  {
+    <div class="alert alert-success" role="alert">@TempData["message"]</div>
+  }
+    <div class="row mb-3">
+      <div class="col">
+          <a asp-action="Add" class="btn btn-primary btn-sm">ADD</a>
+      </div>
+    </div>
+    <table class="table table-striped" id="table1">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Name</th>
+          <th>Created at</th>
+          <th>Updated at</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+   
+        @if (@Model.ProductCategories != null)
+        {
+          var i = 0;
+          foreach (var item in Model.ProductCategories)
+            {
+              ++i;
+              <tr>
+                <td>@i</td>
+                <td>@item.Name</td>
+                <td>@item.CreatedAt</td>
+                <td>
+                  @item.UpdatedAt
+                </td>
+                <td>
+                  <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary m-2 btn-sm">EDIT</a>
+                  <a onclick="return confirm('are you sure?')" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger m-2 btn-sm">DELETE</a>
+                  </td>
+              </tr>
+            }
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+@section Scripts {
+    <script>
+        // Simple Datatable
+        let table1 = document.querySelector('#table1');
+        let dataTable = new simpleDatatables.DataTable(table1);
+    </script>
+}
+

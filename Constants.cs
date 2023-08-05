@@ -39,5 +39,12 @@ namespace Blog
         public const string UPLOAD_DIR = "uploads";
         public const string UPLOAD_IMAGE_DIR = UPLOAD_DIR + "/images";
         public const string PUBLIC_BUCKET = "public";
+
+        // Admin menu name
+        public const string ADMIN_MENU_ARTICLE_CATEGORY = "article_category";
+        public const string ADMIN_MENU_ARTICLE = "article";
+        public const string ADMIN_MENU_PRODUCT_CATEGORY = "product_category";
+        public const string ADMIN_MENU_PRODUCT = "product";
+
     }
 }

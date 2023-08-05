@@ -10,13 +10,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Blog.Services.Repository
 {
-    public class ArticleCategoryRepository : BaseRepository<ArticleCategoryModel>, IArticleCategoryRepository
+    public class ProductCategoryRepository : BaseRepository<ProductCategoryModel>, IProductCategoryRepository
     {
-        public ArticleCategoryRepository(ApplicationDbContext context) : base(context)
+        public ProductCategoryRepository(ApplicationDbContext context) : base(context)
         {
         }
 
-        public override ArticleCategoryModel Delete(ArticleCategoryModel entityToDelete)
+        public override ProductCategoryModel Delete(ProductCategoryModel entityToDelete)
         {
             if (context.Entry(entityToDelete).State == EntityState.Detached)
             {
@@ -29,7 +29,6 @@ namespace Blog.Services.Repository
             dbSet.Remove(entityToDelete);
             return entityToDelete;
         }
-
 
         public IEnumerable<SelectListItem> ToSelectListItems()
         {

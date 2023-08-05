@@ -24,16 +24,30 @@ namespace Blog.Data
             modelBuilder.Entity<ArticleCategoryModel>()
             .HasOne(g => g.Parent)
             .WithMany(l => l.Children)
-            .HasForeignKey(g => g.ParentId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .HasForeignKey(g => g.ParentId);
 
             modelBuilder.Entity<ArticleModel>()
-            .HasMany<ArticleCategoryModel>(s => s.ArticleCategories)
+            .HasMany(s => s.ArticleCategories)
             .WithMany(c => c.Articles);
 
             modelBuilder.Entity<ArticleModel>()
             .HasIndex(u => u.Slug)
             .IsUnique();
+
+            modelBuilder.Entity<ProductModel>()
+            .HasMany(e => e.ProductCategories)
+            .WithMany(e => e.Products)
+            .UsingEntity(
+                "ProductProductCategoryModel",
+                l => l.HasOne(typeof(ProductCategoryModel)).WithMany().HasForeignKey("ProductCategoryId").HasPrincipalKey(nameof(ProductCategoryModel.Id)),
+                r => r.HasOne(typeof(ProductModel)).WithMany().HasForeignKey("ProductId").HasPrincipalKey(nameof(ProductModel.Id)),
+                j => j.HasKey("ProductId", "ProductCategoryId")
+            );
+
+            modelBuilder.Entity<ProductCategoryModel>()
+            .HasOne(g => g.Parent)
+            .WithMany(l => l.Children)
+            .HasForeignKey(g => g.ParentId);
 
             base.OnModelCreating(modelBuilder);
         }

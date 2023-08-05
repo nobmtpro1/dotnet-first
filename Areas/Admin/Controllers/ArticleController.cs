@@ -59,6 +59,7 @@ public class ArticleController : Controller
             });
         }
         model.Articles = articlesList;
+        ViewData["menuActive"] = Const.ADMIN_MENU_ARTICLE;
         return View(model);
     }
 
@@ -67,6 +68,7 @@ public class ArticleController : Controller
     {
         ArticleViewModel model = new();
         model = InitArticleViewModel(model, null);
+        ViewData["menuActive"] = Const.ADMIN_MENU_ARTICLE;
         return View(model);
     }
 
@@ -112,6 +114,7 @@ public class ArticleController : Controller
             return RedirectToAction("Add");
         }
         model = InitArticleViewModel(model, null);
+        ViewData["menuActive"] = Const.ADMIN_MENU_ARTICLE;
         return View(model);
     }
 
@@ -137,6 +140,7 @@ public class ArticleController : Controller
 
         model = InitArticleViewModel(model, article);
         // Dumper.Dump(model);
+        ViewData["menuActive"] = Const.ADMIN_MENU_ARTICLE;
         return View(model);
     }
 

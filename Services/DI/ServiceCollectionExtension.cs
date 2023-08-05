@@ -30,6 +30,7 @@ namespace Blog.Services.DI
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IArticleRepository, ArticleRepository>();
             services.AddScoped<IArticleCategoryRepository, ArticleCategoryRepository>();
+            services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
 
             return services;
         }

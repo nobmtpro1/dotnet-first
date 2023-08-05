@@ -6,6 +6,7 @@ public interface IUnitOfWork
 {
     public IArticleRepository ArticleRepository { get; }
     public IArticleCategoryRepository ArticleCategoryRepository { get; }
+    public IProductCategoryRepository ProductCategoryRepository { get; }
     public void Save();
     public void Dispose();
 }

@@ -14,6 +14,7 @@ namespace Blog.Services
         private readonly ApplicationDbContext context = default!;
         private IArticleRepository articleRepository = default!;
         private IArticleCategoryRepository articleCategoryRepository = default!;
+        private IProductCategoryRepository productCategoryRepository = default!;
 
         public UnitOfWork(ApplicationDbContext _context)
         {
@@ -41,6 +42,18 @@ namespace Blog.Services
                     articleCategoryRepository = new ArticleCategoryRepository(context);
                 }
                 return articleCategoryRepository;
+            }
+        }
+
+        public IProductCategoryRepository ProductCategoryRepository
+        {
+            get
+            {
+                if (productCategoryRepository == null)
+                {
+                    productCategoryRepository = new ProductCategoryRepository(context);
+                }
+                return productCategoryRepository;
             }
         }
 

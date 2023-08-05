@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
-using Blog.Areas.Admin.ViewModels.ArticleCategory;
+using Blog.Areas.Admin.ViewModels.ProductCategory;
 using Blog.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
@@ -22,13 +22,13 @@ namespace Blog.Areas.Admin.Controllers;
 
 [Authorize(Roles = Const.ROLE_ADMIN)]
 [Area("Admin")]
-public class ArticleCategoryController : Controller
+public class ProductCategoryController : Controller
 {
-    private readonly ILogger<ArticleCategoryController> _logger;
+    private readonly ILogger<ProductCategoryController> _logger;
     private readonly IWebHostEnvironment _hostingEnv;
     private readonly IUnitOfWork _unitOfWork;
 
-    public ArticleCategoryController(ILogger<ArticleCategoryController> logger, IWebHostEnvironment hostingEnv, IUnitOfWork unitOfWork)
+    public ProductCategoryController(ILogger<ProductCategoryController> logger, IWebHostEnvironment hostingEnv, IUnitOfWork unitOfWork)
     {
         _logger = logger;
         _hostingEnv = hostingEnv;
@@ -37,12 +37,12 @@ public class ArticleCategoryController : Controller
 
     public IActionResult Index()
     {
-        ArticleCategoryListViewModel model = new();
-        var articleCategories = _unitOfWork.ArticleCategoryRepository.Get(orderBy: q => q.OrderBy(d => d.CreatedAt));
-        var articleCategoriesListView = new List<ArticleCategoryViewModel>();
+        ProductCategoryListViewModel model = new();
+        var articleCategories = _unitOfWork.ProductCategoryRepository.Get(orderBy: q => q.OrderBy(d => d.CreatedAt));
+        var articleCategoriesListView = new List<ProductCategoryViewModel>();
         foreach (var item in articleCategories)
         {
-            articleCategoriesListView.Add(new ArticleCategoryViewModel()
+            articleCategoriesListView.Add(new ProductCategoryViewModel()
             {
                 Id = item.Id,
                 Name = item.Name,
@@ -50,8 +50,8 @@ public class ArticleCategoryController : Controller
                 UpdatedAt = item.UpdatedAt!.Value,
             });
         }
-        model.ArticleCategories = articleCategoriesListView;
-        ViewData["menuActive"] = Const.ADMIN_MENU_ARTICLE_CATEGORY;
+        model.ProductCategories = articleCategoriesListView;
+        ViewData["menuActive"] = Const.ADMIN_MENU_PRODUCT_CATEGORY;
         return View(model);
     }
 
@@ -59,44 +59,44 @@ public class ArticleCategoryController : Controller
     [HttpGet]
     public IActionResult Add()
     {
-        ArticleCategoryViewModel model = new();
-        model = InitArticleCategoryViewModel(model);
-        ViewData["menuActive"] = Const.ADMIN_MENU_ARTICLE_CATEGORY;
+        ProductCategoryViewModel model = new();
+        model = InitProductCategoryViewModel(model);
+        ViewData["menuActive"] = Const.ADMIN_MENU_PRODUCT_CATEGORY;
         return View(model);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Add(ArticleCategoryViewModel model)
+    public IActionResult Add(ProductCategoryViewModel model)
     {
         if (ModelState.IsValid)
         {
-            var articleCategory = new ArticleCategoryModel()
+            var articleCategory = new ProductCategoryModel()
             {
                 Id = Guid.NewGuid(),
                 Name = model.Name,
                 ParentId = model.ParentId,
                 Slug = model.Slug,
             };
-            _unitOfWork.ArticleCategoryRepository.Insert(articleCategory);
+            _unitOfWork.ProductCategoryRepository.Insert(articleCategory);
             _unitOfWork.Save();
             TempData["Message"] = "Create successfully";
             return RedirectToAction("Add");
         }
-        ViewData["menuActive"] = Const.ADMIN_MENU_ARTICLE_CATEGORY;
+
         return View(model);
     }
 
     [HttpGet]
     public IActionResult Edit(Guid Id)
     {
-        var articleCategory = _unitOfWork.ArticleCategoryRepository.GetByID(Id);
-        // Dumper.Dump(article.ArticleCategories);
+        var articleCategory = _unitOfWork.ProductCategoryRepository.GetByID(Id);
+        // Dumper.Dump(article.ProductCategories);
         if (articleCategory == null)
         {
             return NotFound();
         }
-        var model = new ArticleCategoryViewModel()
+        var model = new ProductCategoryViewModel()
         {
             Id = articleCategory.Id,
             Name = articleCategory.Name,
@@ -106,16 +106,16 @@ public class ArticleCategoryController : Controller
             CreatedAt = articleCategory.CreatedAt,
         };
 
-        model = InitArticleCategoryViewModel(model, Id);
-        ViewData["menuActive"] = Const.ADMIN_MENU_ARTICLE_CATEGORY;
+        model = InitProductCategoryViewModel(model, Id);
+        ViewData["menuActive"] = Const.ADMIN_MENU_PRODUCT_CATEGORY;
         return View(model);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Edit(ArticleCategoryViewModel model, Guid Id)
+    public IActionResult Edit(ProductCategoryViewModel model, Guid Id)
     {
-        var articleCategory = _unitOfWork.ArticleCategoryRepository.GetByID(Id);
+        var articleCategory = _unitOfWork.ProductCategoryRepository.GetByID(Id);
         if (articleCategory == null)
         {
             return NotFound();
@@ -123,41 +123,41 @@ public class ArticleCategoryController : Controller
         if (ModelState.IsValid)
         {
             model.Slug = Helper.GenerateSlug(model.Slug);
-            if (articleCategory.Slug != model.Slug && _unitOfWork.ArticleCategoryRepository.CheckSlugExist(model.Slug))
+            if (articleCategory.Slug != model.Slug && _unitOfWork.ProductCategoryRepository.CheckSlugExist(model.Slug))
             {
                 ModelState.AddModelError("Slug", "Slug is already existed");
-                model = InitArticleCategoryViewModel(model, Id);
+                model = InitProductCategoryViewModel(model, Id);
                 return View(model);
             }
             articleCategory.Name = model.Name;
             articleCategory.ParentId = model.ParentId;
             articleCategory.Slug = model.Slug;
-            _unitOfWork.ArticleCategoryRepository.Update(articleCategory);
+            _unitOfWork.ProductCategoryRepository.Update(articleCategory);
             _unitOfWork.Save();
             TempData["Message"] = "Update successfully";
             return RedirectToAction("Edit", new { Id });
         }
-        model = InitArticleCategoryViewModel(model, Id);
+        model = InitProductCategoryViewModel(model, Id);
         return View(model);
     }
 
     [HttpGet]
     public IActionResult Delete(Guid Id)
     {
-        var articleCategory = _unitOfWork.ArticleCategoryRepository.GetByID(Id);
+        var articleCategory = _unitOfWork.ProductCategoryRepository.GetByID(Id);
         if (articleCategory == null)
         {
             return NotFound();
         }
-        _unitOfWork.ArticleCategoryRepository.Delete(articleCategory);
+        _unitOfWork.ProductCategoryRepository.Delete(articleCategory);
         _unitOfWork.Save();
         TempData["Message"] = "Delete successfully";
         return RedirectToAction("Index");
     }
 
-    private ArticleCategoryViewModel InitArticleCategoryViewModel(ArticleCategoryViewModel model, Guid? excludeId = null)
+    private ProductCategoryViewModel InitProductCategoryViewModel(ProductCategoryViewModel model, Guid? excludeId = null)
     {
-        var articleCategories = _unitOfWork.ArticleCategoryRepository.Get(orderBy: q => q.OrderBy(d => d.CreatedAt));
+        var articleCategories = _unitOfWork.ProductCategoryRepository.Get(orderBy: q => q.OrderBy(d => d.CreatedAt));
         var parentList = new List<SelectListItem>();
 
         foreach (var item in articleCategories)

@@ -1,91 +1,78 @@
-        <div id="sidebar" class="active">
-            <div class="sidebar-wrapper active">
-                <div class="sidebar-header">
-                    <div class="d-flex justify-content-between">
-                        <div class="logo">
-                            <a  asp-area="Admin" asp-controller="Article" asp-action="Index"><img src="/cmshtml/assets/images/logo/logo.png" alt="Logo" srcset=""></a>
-                        </div>
-                        <div class="toggler">
-                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
-                        </div>
-                    </div>
+<div id="sidebar" class="active">
+    <div class="sidebar-wrapper active">
+        <div class="sidebar-header">
+            <div class="d-flex justify-content-between">
+                <div class="logo">
+                    <a asp-area="Admin" asp-controller="Article" asp-action="Index"><img
+                            src="/cmshtml/assets/images/logo/logo.png" alt="Logo" srcset=""></a>
                 </div>
-                <div class="sidebar-menu">
-                    <ul class="menu">
-                        <li class="sidebar-title">Menu</li>
-                        <li class='sidebar-item  has-sub @Html.IsActiveMultiple(new List<dynamic>() {
-                                new {
-                                    controller = "Article",
-                                    action = "Index",
-                                },
-                                new {
-                                    controller = "Article",
-                                    action = "Add",
-                                },
-                                    new {
-                                    controller = "Article",
-                                    action = "Edit",
-                                },
-                                new {
-                                    controller = "ArticleCategory",
-                                    action = "Index",
-                                },
-                                new {
-                                    controller = "ArticleCategory",
-                                    action = "Add",
-                                },
-                                    new {
-                                    controller = "ArticleCategory",
-                                    action = "Edit",
-                                },
-                            })'>
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
-                                <span>Article</span>
-                            </a>
-                            <ul class="submenu active">
-                                <li class='submenu-item @Html.IsActiveMultiple(new List<dynamic>() {
-                                    new {
-                                        controller = "ArticleCategory",
-                                        action = "Index",
-                                    },
-                                    new {
-                                        controller = "ArticleCategory",
-                                        action = "Add",
-                                    },
-                                        new {
-                                        controller = "ArticleCategory",
-                                        action = "Edit",
-                                    },
-                                })'>
-                                    <a asp-area="Admin" asp-controller="ArticleCategory" asp-action="Index">Category</a>
-                                </li>
-                                <li class='submenu-item @Html.IsActiveMultiple(new List<dynamic>() {
-                                    new {
-                                        controller = "Article",
-                                        action = "Index",
-                                    },
-                                    new {
-                                        controller = "Article",
-                                        action = "Add",
-                                    },
-                                        new {
-                                        controller = "Article",
-                                        action = "Edit",
-                                    },
-                                })'>
-                                    <a asp-area="Admin" asp-controller="Article" asp-action="Index">Article</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a asp-area="" asp-controller="Account" asp-action="Logout" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="toggler">
+                    <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                 </div>
-                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
             </div>
         </div>
+        <div class="sidebar-menu">
+            <ul class="menu">
+                <li class="sidebar-title">Menu</li>
+                <li class='sidebar-item  has-sub 
+                @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_ARTICLE_CATEGORY || (string)ViewData["menuActive"]! == Const.ADMIN_MENU_ARTICLE ){
+                    @Html.Raw("active")
+                }
+                '>
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-stack"></i>
+                        <span>Article</span>
+                    </a>
+                    <ul class="submenu active">
+                        <li class='submenu-item 
+                        @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_ARTICLE_CATEGORY){
+                            @Html.Raw("active")
+                        }
+                        '>
+                            <a asp-area="Admin" asp-controller="ArticleCategory" asp-action="Index">Category</a>
+                        </li>
+                        <li class='submenu-item 
+                        @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_ARTICLE){
+                            @Html.Raw("active")
+                        }
+                        '>
+                            <a asp-area="Admin" asp-controller="Article" asp-action="Index">Article</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class='sidebar-item  has-sub 
+                    @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_PRODUCT_CATEGORY){
+                        @Html.Raw("active")
+                    }'>
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-stack"></i>
+                        <span>Product</span>
+                    </a>
+                    <ul class="submenu active">
+                        <li class='submenu-item
+                        @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_PRODUCT_CATEGORY){
+                            @Html.Raw("active")
+                        }
+                        '>
+                            <a asp-area="Admin" asp-controller="ProductCategory" asp-action="Index">Category</a>
+                        </li>
+                        <li class='submenu-item
+                        @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_PRODUCT){
+                            @Html.Raw("active")
+                        }
+                        '>
+                            <a asp-area="Admin" asp-controller="ProductCategory" asp-action="Index">Product</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a asp-area="" asp-controller="Account" asp-action="Logout" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+    </div>
+</div>
