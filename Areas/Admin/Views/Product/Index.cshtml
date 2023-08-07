@@ -1,4 +1,4 @@
-@model Blog.Areas.Admin.ViewModels.Article.ArticleListViewModel
+@model Blog.Areas.Admin.ViewModels.Product.ProductListViewModel
 <div class="card">
 
   <div class="card-body">
@@ -15,7 +15,7 @@
       <thead>
         <tr>
           <th>STT</th>
-          <th>Title</th>
+          <th>Name</th>
           <th>Created at</th>
           <th>Updated at</th>
           <th>Actions</th>
@@ -23,22 +23,22 @@
       </thead>
       <tbody>
    
-        @if (@Model.Articles != null)
+        @if (@Model.Products != null)
         {
           var i = 0;
-          foreach (var article in Model.Articles)
+          foreach (var product in Model.Products)
             {
               ++i;
               <tr>
                 <td>@i</td>
-                <td>@article.Title</td>
-                <td>@article.CreatedAt</td>
+                <td>@product.Name</td>
+                <td>@product.CreatedAt</td>
                 <td>
-                  @article.UpdatedAt
+                  @product.UpdatedAt
                 </td>
                 <td>
-                  <a asp-action="Edit" asp-route-id="@article.Id" class="btn btn-primary m-2 btn-sm">EDIT</a>
-                  <a onclick="return confirm('are you sure?')" asp-action="Delete" asp-route-id="@article.Id" class="btn btn-danger m-2 btn-sm">DELETE</a>
+                  <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary m-2 btn-sm">EDIT</a>
+                  <a onclick="return confirm('are you sure?')" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger m-2 btn-sm">DELETE</a>
                   </td>
               </tr>
             }

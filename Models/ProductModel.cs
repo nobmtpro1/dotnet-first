@@ -13,9 +13,11 @@ namespace Blog.Models
         {
             ProductCategories = new HashSet<ProductCategoryModel>();
             ProductProductCategory = new HashSet<ProductProductCategoryModel>();
+            ProductImages = new HashSet<ProductImageModel>();
         }
         public string Name { set; get; } = default!;
 
+        public string? Description { set; get; }
         public string? Content { set; get; }
 
         public string? Image { set; get; }
@@ -24,5 +26,6 @@ namespace Blog.Models
 
         public virtual ICollection<ProductCategoryModel> ProductCategories { get; set; }
         public virtual ICollection<ProductProductCategoryModel> ProductProductCategory { get; set; }
+        public virtual ICollection<ProductImageModel> ProductImages { get; set; }
     }
 }

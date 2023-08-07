@@ -15,6 +15,7 @@ namespace Blog.Services
         private IArticleRepository articleRepository = default!;
         private IArticleCategoryRepository articleCategoryRepository = default!;
         private IProductCategoryRepository productCategoryRepository = default!;
+        private IProductRepository productRepository = default!;
 
         public UnitOfWork(ApplicationDbContext _context)
         {
@@ -25,10 +26,7 @@ namespace Blog.Services
         {
             get
             {
-                if (articleRepository == null)
-                {
-                    articleRepository = new ArticleRepository(context);
-                }
+                articleRepository ??= new ArticleRepository(context);
                 return articleRepository;
             }
         }
@@ -37,10 +35,7 @@ namespace Blog.Services
         {
             get
             {
-                if (articleCategoryRepository == null)
-                {
-                    articleCategoryRepository = new ArticleCategoryRepository(context);
-                }
+                articleCategoryRepository ??= new ArticleCategoryRepository(context);
                 return articleCategoryRepository;
             }
         }
@@ -49,11 +44,17 @@ namespace Blog.Services
         {
             get
             {
-                if (productCategoryRepository == null)
-                {
-                    productCategoryRepository = new ProductCategoryRepository(context);
-                }
+                productCategoryRepository ??= new ProductCategoryRepository(context);
                 return productCategoryRepository;
+            }
+        }
+
+        public IProductRepository ProductRepository
+        {
+            get
+            {
+                productRepository ??= new ProductRepository(context);
+                return productRepository;
             }
         }
 

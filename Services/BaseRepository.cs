@@ -34,9 +34,16 @@ namespace Blog.Services
         public virtual IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null!,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null!,
-            string includeProperties = "")
+            string includeProperties = "",
+            Expression<Func<TEntity, TEntity>> select = null!
+        )
         {
             IQueryable<TEntity> query = dbSet;
+
+            if (select != null)
+            {
+                query = query.Select(select);
+            }
 
             if (filter != null)
             {

@@ -41,7 +41,7 @@
                     </ul>
                 </li>
                 <li class='sidebar-item  has-sub 
-                    @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_PRODUCT_CATEGORY){
+                    @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_PRODUCT_CATEGORY  || (string)ViewData["menuActive"]! == Const.ADMIN_MENU_PRODUCT){
                         @Html.Raw("active")
                     }'>
                     <a href="#" class='sidebar-link'>
@@ -50,7 +50,7 @@
                     </a>
                     <ul class="submenu active">
                         <li class='submenu-item
-                        @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_PRODUCT_CATEGORY){
+                        @if((string)ViewData["menuActive"]! == Const.ADMIN_MENU_PRODUCT_CATEGORY) {
                             @Html.Raw("active")
                         }
                         '>
@@ -61,7 +61,7 @@
                             @Html.Raw("active")
                         }
                         '>
-                            <a asp-area="Admin" asp-controller="ProductCategory" asp-action="Index">Product</a>
+                            <a asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
                         </li>
                     </ul>
                 </li>

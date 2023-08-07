@@ -43,7 +43,17 @@ public class ArticleController : Controller
     public IActionResult Index()
     {
         ArticleListViewModel model = new();
-        var articles = _unitOfWork.ArticleRepository.Get(orderBy: q => q.OrderBy(d => d.CreatedAt));
+        var articles = _unitOfWork.ArticleRepository.Get(
+            select: x => new ArticleModel()
+            {
+                Id = x.Id,
+                Title = x.Title,
+                CreatedAt = x.CreatedAt,
+                UpdatedAt = x.UpdatedAt,
+            },
+            orderBy: q => q.OrderBy(d => d.CreatedAt)
+        );
+        // var articles = _unitOfWork.ArticleRepository.DbSet().Select(x => new { x.Id, x.Title, x.CreatedAt, x.UpdatedAt, x.ArticleCategories }).OrderBy(d => d.CreatedAt).ToList();
         var articlesList = new List<ArticleViewModel>();
         foreach (var article in articles)
         {
@@ -51,9 +61,6 @@ public class ArticleController : Controller
             {
                 Id = article.Id,
                 Title = article.Title,
-                Content = article.Content,
-                Image = article.Image,
-                Slug = article.Slug,
                 UpdatedAt = article.UpdatedAt != null ? article.UpdatedAt!.Value : null,
                 CreatedAt = article.CreatedAt != null ? article.CreatedAt!.Value : null,
             });

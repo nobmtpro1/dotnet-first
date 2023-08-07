@@ -1,0 +1,76 @@
+@model Blog.Areas.Admin.ViewModels.Product.ProductViewModel
+<div class="card">
+  <div class="card-body">
+    @if (!String.IsNullOrEmpty((string)TempData["message"]!))
+    {
+      <div class="alert alert-success" role="alert">@TempData["message"]</div>
+    }
+    <div class="row">
+      <form class="col" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+          <label asp-for="ProductCategories" class="control-label"></label>
+          <select asp-for="ProductCategories" asp-items="@Model.ProductCategoryList" class="form-control"></select>
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.ImageFile"></label>
+          <input class="form-control" asp-for="@Model.ImageFile" />
+          <p>
+            <small>
+              @Html.ValidationMessageFor(m => m.ImageFile, "", new { @class
+              ="text-danger" })
+            </small>
+          </p>
+          <img width="200" src='@Model.Image' alt="">
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.Name"></label>
+          <input class="form-control" asp-for="@Model.Name" />
+          <p>
+            <small>
+              @Html.ValidationMessageFor(m => m.Name, "", new { @class
+              ="text-danger" })
+            </small>
+          </p>
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.Slug"></label>
+          <input class="form-control" asp-for="@Model.Slug" />
+          <p>
+            <small>
+              @Html.ValidationMessageFor(m => m.Slug, "", new { @class
+              ="text-danger" })
+            </small>
+          </p>
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.Description"></label>
+          <input class="form-control" asp-for="@Model.Description" />
+          <p>
+            <small>
+              @Html.ValidationMessageFor(m => m.Description, "", new { @class
+              ="text-danger" })
+            </small>
+          </p>
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.Content"></label>
+          <textarea class="form-control tinymce" asp-for="@Model.Content"></textarea>
+          <p>
+            <small>
+              @Html.ValidationMessageFor(m => m.Content, "", new { @class
+              ="text-danger" })
+            </small>
+          </p>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  `
+</div>
+@section Scripts {
+  <script></script>
+}

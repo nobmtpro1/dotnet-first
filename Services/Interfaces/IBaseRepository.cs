@@ -17,7 +17,9 @@ namespace Blog.Services.Interfaces
         public IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null!,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null!,
-            string includeProperties = "");
+            string includeProperties = "",
+            Expression<Func<TEntity, TEntity>> select = null!
+            );
 
         public TEntity GetByID(object id);
 
